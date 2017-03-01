@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-model</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    名字：<input ng-model="name">
+</div>
+<p>使用ng-model指令来绑定输入域的值到控制器的属性</p>
+<script src="js/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope){
+        $scope.name = "John Doe";
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat下拉列表</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select>
+        <option ng-repeat="x in names">{{x}}</option>
+    </select>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/ComboBox.js"></script>
+</body>
+</html>

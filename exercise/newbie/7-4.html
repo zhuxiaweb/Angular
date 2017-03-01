@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select ng-model="selectedName" ng-options="x.site for x in sites"></select>
+    <h1>你选择的是：{{selectedName.site}}</h1>
+    <p>网址是：{{selectedName.url}}</p>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/ComboBox_showdetail.js"></script>
+</body>
+</html>

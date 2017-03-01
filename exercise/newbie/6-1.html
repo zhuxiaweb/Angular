@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="personContrller">
+    <p>姓名为：{{lastName | lowercase}}</p>
+</div>
+<script src="js/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('personContrller', function($scope){
+        $scope.lastName = "Doe";
+    });
+</script>
+</body>
+</html>
