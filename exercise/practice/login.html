@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <meta charset="UTF-8">
+    <title>ishop</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="format-detection" content="telephone=yes" />
+<meta name="revisit-after" content="1 days" />
+<meta content="all" name="robots" />
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<script src="js/angular.min.js"></script>
+<script src="js/ctrl_login.js"></script>
+</head>
+<body ng-app="IshopMobile" ng-controller="loginCtrl">
+   <div  class="login_list" >
+       <div class="account clearfix pr">
+            <div class="fl">
+                <input  type="text" placeholder="请输入您的账号" ng-model="account">
+            </div>
+            <div class="aunt fr" ng-if="account">
+                <i class="pa" ng-click="account_remove()"></i>
+            </div>
+       </div>
+       <div class="password clearfix pr">
+            <div class="fl">
+                <input  type="{{type}}" placeholder="请输入您的密码" ng-model="password">
+            </div>
+            <div class="passw fr" ng-if="password">
+                <i class="pa {{show}}" ng-click="change_type()"></i>
+                <i class="pa" ng-click="password_remove()"></i>
+            </div>
+       </div>
+       <h3 class="{{check_keep}}" ng-click="keep_loginInfor()"><i class="vm"></i><em class="vm">两周内自动登录</em></h3>
+   </div>
+
+</body>
+</html>
