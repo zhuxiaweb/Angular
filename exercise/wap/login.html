@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="revisit-after" content="1 days" />
+    <meta content="all" name="robots" />
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script src="js/basic.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/loginCtrl.js"></script>
+    <title>登录</title>
+</head>
+<body ng-app="IshopMobile" ng-controller="login_ctrl">
+
+<div class="header clearfix">
+    <a class ="back_button" href="javascript:void(0);"></a>
+    <h1>登录</h1>
+</div><!-- header结束 -->
+<div class="wrapper">
+    <div class="login_content">
+        <div class="login_zhmm">
+            <ul>
+            <li class="clearfix">
+            <input type="text" placeholder="请输入您的账号" ng-model="account">
+            <span ng-if="account" ng-click="account_remove()"></span>
+            </li>
+            <li class="line"></li>
+            <li class="clearfix"><input type="{{type}}" placeholder="请输入你的登录密码" ng-model="password"><i ng-if="password"><span ng-click="password_remove()"></span><em class="login_pashide {{show}}" ng-click="change_type()"></em></i></li>
+        </ul>
+        </div>
+
+        <div class="login_check clearfix">
+            <!-- <img src="images/login_check.png" class="login_imgcheck hide">
+            <img src="images/login_uncheck.png" class="login_imgcheck"> -->
+            <p>两周内自动登录</p>
+        </div>
+        <div class="login_btn">
+            <button>登录</button>
+        </div>
+
+        <div class="shortcuts">
+            <ul>
+                <li><a href="javascript:;">忘记密码</a></li>
+                <li><a href="javascript:;">快速登录</a></li>
+            </ul>
+        </div>
+    </div><!-- login_content 结束-->
+    <div class="login_entry">
+        <p><em>还可以使用第三方网站账号登录</em></p>
+        <ul class="clearfix">
+            <li><a href="javascript:;"><img src="images/login_xinlang.png" alt="新浪微博"></a></li>
+            <li><a href="javascript:;"><img src="images/login_QQ.png" alt="QQ"></a></li>
+            <li><a href="javascript:;"><img src="images/login_weixin.png" alt="微信"></a></li>
+        </ul>
+    </div><!-- login_entry结束 -->
+</div>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+    $(".login_check p").click(function() {
+        if($(this).hasClass('login_imgcheck')){
+            $(this).removeClass("login_imgcheck");
+        }else{
+            $(this).addClass("login_imgcheck");
+        }
+    });
+    $(".login_zhmm li span").click(function(){
+        $(this).parent().find("input").val("");
+    })
+	
+	$(".login_zhmm input").focus(function(){
+	
+	})
+})
+</script>
+</body>
+</html>

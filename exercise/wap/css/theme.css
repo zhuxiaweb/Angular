@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/* 登录 */
+.wrapper{ position:absolute;
+    top: 2.2rem;
+    bottom: 0;
+    left: 0;
+    right:0;
+    z-index: 10;
+    padding-top:1rem;
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;
+ }
+
+
+.login_content {
+    padding: 0 0.25rem;
+}
+
+.login_content .login_zhmm{
+     background: url(../images/login_contentbg.png) no-repeat center center;
+     background-size:100% auto;
+}
+
+.login_content .login_zhmm{
+     padding: 0 10px;
+}
+
+.login_content .login_zhmm li input{
+    height: 2.5rem;
+    width:80%;
+    background: none;
+    line-height: 2.5rem;
+
+}
+
+.login_content .login_zhmm li span{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_inputclear.png) no-repeat center center;
+    background-size:0.7rem 0.7rem;
+    float:right;
+}
+
+.login_content .login_zhmm li .login_pashide{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_pashide.png) no-repeat center center;
+    background-size:1.25rem 0.35rem;
+    float: right;
+}
+
+.login_content .login_zhmm li em.login_passhow{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_passhow.png) no-repeat center center;
+    background-size:1.1rem 0.67rem;
+    float: right;
+}
+
+
+
+.login_content .login_zhmm ul li:first-child {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+
+.login_content .login_check{
+    margin-top: 0.6rem;
+    height: 0.65rem;
+}
+
+/* .login_content .login_check .login_imgcheck{
+    float:left;
+    width: 0.6rem;
+    height: 0.65rem;
+    margin-left:15px;
+} */
+
+.login_content .login_check p.login_imgcheck{
+    padding-left: 1rem;
+    background: url(../images/login_check.png) no-repeat 0.2rem center;
+    background-size: 0.6rem 0.65rem;
+}
+
+.login_content .login_check p{
+    padding-left: 1rem;
+    background: url(../images/login_uncheck.png) no-repeat 0.2rem center;
+    background-size: 0.6rem 0.65rem;
+}
+
+
+.login_content .login_check p{
+    float: left;
+     margin-left: 0.2rem;
+     font-size: 0.65rem;
+     line-height: 0.65rem
+}
+
+
+.login_content .login_btn{
+    padding: 0 0.25rem;
+    margin: 0.5rem 0 1rem;
+}
+.login_content button{
+    background-color:#bbbbbb;
+    width: 100%;
+    height:2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.login_content .shortcuts{
+    height:1.6rem
+}
+.login_content .shortcuts li{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.login_content .shortcuts li a{
+    font-size: 0.75rem;
+}
+
+.login_content .shortcuts ul li:first-child{
+    background:  url(../images/login_v.png) no-repeat center right;
+    background-size:1px 100%;
+}
+
+.login_entry{
+    padding: 3rem 0.5rem ;
+}
+.login_entry>p{
+    height: 1px;
+    background-color: #999;
+    position:relative;
+   margin-bottom: 2rem;
+}
+
+.login_entry>p em{
+    display: inline-block;
+    width: 9.5rem;
+    font-size: 0.6rem;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #999;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+
+}
+
+.login_entry ul li{
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.login_entry ul li img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
