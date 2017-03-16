@@ -1,0 +1,35 @@
+<style>
+	.add_addr .lh2{line-height: 2rem;}
+	.add_addr .list label{width:4rem;}
+	.add_addr .list input{width:70%;height:2rem;}
+	.add_addr .list i{ width:0.85rem; height:0.85rem;  background-position:-6.85rem 0; right:0.5rem;top: 0.5rem;}
+</style>
+<ng-header2></ng-header2>
+<div class="wrap">
+	<div class="add_receiver padding_lr10 mt5">
+		<!--添加收货地址-->
+		<div class="add_addr bg_white box_adorn padding_lr10 font70 mt5">
+			<ul class="lh2 list">
+				<li class="border_b pr">
+					<label class="in_b">收货人：</label><input placeholder="请填写收货人姓名"/>
+					<a href="javascript:void(0);"><i class="pa"></i></a>
+				</li>
+				<li class="border_b pr">
+					<label class="in_b">联系方式：</label><input placeholder="请填写您的联系方式"/>
+					<a href="javascript:void(0);"><i class="pa"></i></a>
+				</li>
+				<li class="border_b"><label class="in_b">所在地区：</label><input placeholder="请选择您所在省、市、区"/></li>
+				<li class="border_b pr"><label class="in_b">详细地址：</label><input placeholder="请填写您的详细地址(街道/门牌号)"/>
+				<a href="javascript:void(0);"><i class="pa"></i></a>
+				</li>
+				<li class="pr">
+					<label class="in_b">邮政编码：</label><input placeholder="请填写邮政编码(选填)"/>
+					<a href="javascript:void(0);"><i class="pa"></i></a>
+				</li>
+			</ul>
+		</div>
+		<div class="mt5 btn_init">
+			<input type="buttom" value="确认"/>
+		</div>
+	</div>
+</div>

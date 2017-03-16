@@ -1,0 +1,360 @@
+<style>
+/*页面头部导航*/
+.details_nav{ top:0.6rem; left:0.5rem; z-index:25;}
+.details_nav ul li{ padding:2px 8px; margin-bottom:0.4rem; background:url(image/opacity_bg2.png) no-repeat;}
+.details_nav ul li a{ color:#5f636a;}
+.details_nav ul li.current a{ color:#fff;}
+/*商品标签*/
+.tag{ width:100%; bottom:0; z-index:10;}
+.tag .tag_bg{ width:100%; height:2.5rem; background-color:#000; opacity:0.5; transition:all 0.5s linear;}
+.tag.current .tag_bg{ height:0;}
+.tag .tag_inner{ top:0; right:0; left:0; margin:0 10px;}
+.tag .tag_inner ul{ margin-top:0.1rem;}
+.tag .tag_inner ul li{ padding:1px 6px; margin-left:5px; background:url(image/opacity_bg.png) repeat-x;}
+.tag .tag_inner .tag_head{ height:0.75rem; width:2.5rem; top:-0.75rem; left:50%; margin-left:-1.25rem; background-color:#000; opacity:0.5; border-radius:4px 4px 0 0; -webkit-border-radius:4px 4px 0 0;}
+.tag .tag_inner>p { top:-0.75rem; left:50%; margin-left:-0.4rem;}
+.tag .tag_inner>p i{ background-position:0 0; height:0.55rem; width:0.75rem;}
+.tag.current .tag_inner>p i{ background-position:-0.75rem 0;}
+/*商品标签结束*/
+.datails_infor .price_style{ padding:0.5rem 0.75rem;}
+.price_style h2 em{ font-size:0.9rem; color:#ff317a;}
+.price_style h2 b{ margin-left:1rem;}
+.price_style p{ color:#999;}
+.price_style p em{ color:#fabd3d;}
+.datails_infor .com_infor,.evaluation_head{ margin:0.5rem 10px 0 10px; height:2rem; line-height:2rem; background:#fff url(image/skip_a.png) no-repeat 98% center; background-size:0.75rem 0.75rem; padding:0 10px;}
+.datails_infor .com_infor p em{ display:inline-block; margin-left:1rem; width:11rem; color:#999;}
+.datails_infor .com_infor.current p em{ color:#333;}
+/*选择颜色尺码弹框*/
+.check_norms{ position:absolute; left:0; right:0; bottom:0; height:55vh; z-index:20; padding:0 0.5rem; transition:all 0.5s linear;}
+.check_norms.current{bottom:-70vh;}
+.check_norms>h6,.check_area>h6{ height:1.2rem; width:1.2rem; position:absolute; top:0.2rem; right:0.2rem;}
+.check_norms>h6 i,.check_area>h6 i{ background-position:-3rem 0; margin:0.2; width:0.75rem; height:0.75rem;}
+.check_norms .norms_head{ height:4rem;}
+.check_norms .norms_head img{ width:4.5rem; height:4.5rem; top:-1.2rem;}
+.check_norms .norms_head>div{ margin-left:0.5rem;}
+.check_norms .norms_head>div h3{ margin-top:0.4rem;}
+.check_norms .norms_head>div h3 em{ color:#ff317a; font-size:1rem;}
+.norms_foot{ position:absolute; bottom:0; left:0; right:0;}
+.norms_foot ul li{ height:2.2rem; line-height:2.2rem; color:#333a49; font-size:0.85rem;}
+.norms_foot ul li:nth-child(2){ background:#2c8ff4; color:#fff;}
+.norms_inner{ position:absolute; padding:0 0.5rem; top:4rem; bottom:2.2rem; right:0; left:0; overflow:auto; -webkit-overflow-scrolling:touch;}
+.norms_inner dt{ margin:0.4rem 0;}
+.norms_inner dd{ float:left; min-width:2.8rem; margin-right:0.5rem; margin-bottom:0.4rem; border:1px solid #e1e1e1; padding:0.2rem 0.4rem; border-radius:2px; -webkit-border-radius:2px; text-align:center;}
+.norms_inner .num_check{ margin:0; padding-bottom:0.4rem;}
+.norms_inner .num_check p{ margin-top:0.4rem;}
+/*促销信息弹框*/
+.offers_inner,.present_inner{ position:absolute; top:4rem; padding:0 0.5rem; bottom:0; left:0; right:0; overflow:auto; -webkit-overflow-scrolling:touch;}
+.offers_inner ul li,.present_inner ul li{ height:2.5rem; line-height:2.5rem; background:url(image/right_big_check.png) no-repeat 98% center; background-size:1rem 1rem; border-bottom:1px solid #e1e1e1;}
+/*选择赠品*/
+.present_list.current{ background:url(image/right_big_check.png) no-repeat 98% center; background-size:1rem 1rem;}
+.present_list h3{ line-height:2rem; padding:0.4rem 0;}
+.present_list h3 img{ width:2rem; height:2rem; margin-right:0.5rem;}
+.present_list p{ margin-bottom:0.4rem;}
+/*选择地址*/
+.check_area{ position:absolute; left:0; right:0; bottom:0; height:55vh; z-index:20; transition:all 0.5s linear;}
+.check_area.current{bottom:-70vh;}
+.check_area .check_area_head{ height:3.7rem;}
+.check_area .check_area_head em{ margin-left:1rem; font-size:0.7rem; line-height:2rem;}
+.check_area_head ul{ background:#eee;}
+.check_area_head ul li{ height:1.7rem; line-height:1.7rem; text-align:center;}
+.check_area_head ul li.current a{ border-bottom:1px solid #2c8ff4; color:#2c8ff4;}
+.check_area_head ul li a{ color:#666; display:inline-block; height:1.7rem; padding:0 0.6rem;}
+.check_area_inner{ position:absolute; top:3.7rem; padding:0 0.5rem; bottom:0; left:0; right:0; overflow:auto; -webkit-overflow-scrolling:touch;}
+.check_area_inner ul li{ height:2.2rem; line-height:2.2rem; font-size:0.62rem; margin:0 10px;}
+.check_area_inner ul li.current{ background:url(image/right_big_check.png) no-repeat 98% center; background-size:0.9rem 0.9rem;}
+/*详情页面底部*/
+.details_food{ height:2.2rem; position:absolute; bottom:0; left:0; right:0; background-color:#fff; z-index:10;}
+.details_food .type_list .fl{ width:2.75rem; height:2.2rem; position:relative;}
+.details_food .type_list .fl i{ position:absolute; width:1.15rem; height:1.15rem; top:50%; left:50%; background-position:-18.55rem 0; margin:-0.575rem 0 0 -0.575rem;}
+.details_food .type_list .fl i.current{ background-position:-16.25rem 0;}
+.details_food  .operate{ position:absolute; left:2.75rem; right:0;}
+.details_food  .operate li{ text-align:center; line-height:2.2rem;}
+.details_food  .operate li:nth-child(1){ background:#fabd3d;}
+.details_food  .operate li:nth-child(2){ background:#2c8ff4;}
+.details_food  .operate li a{ font-size:0.9rem;}
+/*手机号码 到货通知*/
+.notice_tel{ height:2.2rem; position:absolute; bottom:2.2rem; left:0; right:0; background-color:#fff; border:1px solid #e1e1e1; transition:all 0.5s linear; z-index:5;}
+.notice_tel.current{bottom:0;}
+.notice_tel h2{ line-height:2.2rem;}
+.notice_tel h2 em{ display:inline-block; width:4rem; text-align:center;}
+.notice_tel h2 span{ display:inline-block; position:absolute; left:4rem; right:1rem;}
+.notice_tel h2 span input{ width:100%; border:1px solid #e1e1e1; text-indent:0.5em; height:1.5rem;}
+/*商品评价*/
+.evaluation{ margin-top:0.5rem;}
+.evaluation_head{ height:2rem; line-height:2rem; padding:0; margin:0 0 0 10px;}
+.evaluation_head>div.fl p{ margin-right:0.5rem;}
+.evaluation_head>div.fr{ margin-right:1.2rem;}
+.all_star em{ width:0.8rem; height:0.8rem; background-position:-6.05rem 0; position:relative; top:0.1rem;}
+.all_star em.current{ width:0.8rem; height:0.8rem; background-position:-5.25rem 0;}
+.evaluation_inner{ margin:0 10px; border-top:1px solid #e1e1e1;}
+.evaluation_inner_head{ padding:0.5rem 0; line-height:1.8rem;}
+.evaluation_inner_head div.fl img{ width:1.8rem; height:1.8rem; border:1px solid #e1e1e1;}
+.evaluation_inner_head div.fl p em{ line-height:1.8rem; margin-left:0.4rem;}
+.evaluation_inner_infor ul{ padding:0.5rem 0;}
+.evaluation_inner_infor ul li{ width:20%; float:left;}
+.evaluation_inner_infor ul li img{ width:90%; margin-left:5%;}
+.evaluation_inner_bt{ line-height:1rem;}
+.evaluation_inner_bt p.fl em{ margin-left:0.5rem;}
+.evaluation_inner_bt h5 i{ width:1.2rem; height:1.2rem; background-position:-24.35rem 0;}
+.evaluation_inner_bt h5 i.current{ background-position:-23.15rem 0;}
+/*资讯*/
+.goods_inquiry{margin:0.5rem 10px 0.5rem 10px;}
+.inquiry_head{ margin:0 10px; border-bottom:1px solid #e1e1e1; height:2rem; background:#fff url(image/skip_a.png) no-repeat 98% center; background-size:0.75rem 0.75rem; line-height:2rem;}
+.inquiry_infor{ margin:0 10px; padding-bottom:0.4rem;}
+.inquiry_infor p { margin-top:0.4rem;}
+.inquiry_infor p em{ height:0.8rem; width:0.8rem; border-radius:2px; -webkit-border-radius:2px; margin-right:0.5rem;}
+.inquiry_infor p.ques em{ background-color:#ef7b2e;}
+.inquiry_infor p.answ em{ background-color:#00ceb8;}
+.inquiry_infor p span{ display:inline-block; width:14rem;}
+</style>
+<ng-header></ng-header>
+<div class="wrapper">
+	<div class="details_nav pa">
+    	<ul>
+        	<li class="current"><a href="javascript:void(0);" class="font75">商品详情</a></li>
+            <li><a href="javascript:void(0);" class="font75">商品规格</a></li>
+        </ul>
+    </div>
+	<div class="details">
+    	<!--swiper 开始-->
+    	<div class="banner pr">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="img_b" src="image/img/home_banner.png"/></div>
+                    <div class="swiper-slide"><img class="img_b" src="image/img/home_banner.png"/></div>
+                    <div class="swiper-slide"><img class="img_b" src="image/img/home_banner.png"/></div>
+                </div>
+            </div>    
+            <div class="tag pa {{silder_current}}">
+            	<div class="tag_bg"></div>
+            	<div class="tag_inner pa">
+                	<div class="tag_head pa"></div>
+                	<p class="pa tc" ng-click="slider()"><i></i></p>
+                	<h2 class="color_f font65 omit1 mt2">2016冬季新款款博柏利之吻男士经典尊贵奢华腕表</h2>
+                    <ul>
+                    	<li class="fl box_radius"><a class="color_f font60" href="javascript:void(0);">蠢萌蠢萌</a></li>
+                        <li class="fl box_radius"><a class="color_f font60" href="javascript:void(0);">少女系</a></li>
+                        <li class="fl box_radius"><a class="color_f font60" href="javascript:void(0);">欧美系</a></li>
+                        <li class="fl box_radius"><a class="color_f font60" href="javascript:void(0);">蠢萌蠢萌</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--swiper 结束-->
+        <div class="datails_infor">
+        	<div class="price_style bg_white border_b">
+            	<h2><span>会员价<em>￥309.00</em></span><b class="color9">原价￥400.00</b></h2>
+                <p class="mt2"><em>[冬季新品]</em>博柏利之吻轻润亮彩唇膏（军红色305号）博柏利之吻轻润亮彩唇膏（军红色305号）</p>
+            </div>
+            <div class="com_infor border_b box_adorn bg_white" ng-click="check_type()">
+            	<p><span>规格选择</span><em>请选择(尺码/颜色/数量)</em></p>
+            </div>
+            <div class="com_infor border_b box_adorn bg_white">
+            	<p><span>促销信息</span><em>请选择促销</em></p>
+            </div>
+            <div class="com_infor border_b box_adorn bg_white">
+            	<p><span>赠品信息</span><em>请选择赠品</em></p>
+            </div>
+            <div class="com_infor border_b box_adorn bg_white">
+            	<p><span>配送地区</span><em>请选择配送地址</em></p>
+            </div>
+        </div>
+        <!--商品评论-->
+        <div class="evaluation margin_lr10 bg_white box_adorn">
+        	<div class="evaluation_head margin_lr10 botfrt_b">
+            	<div class="fl clearfix">
+                	<p class="fl">商品评价</p>
+                    <div class="fl clearfix">
+                        <div class="all_star fl">
+                            <em class="current"></em>
+                            <em></em>
+                            <em></em>
+                            <em></em>
+                            <em></em>
+                        </div>
+                        <span class="font70 ml2 fl">9.0</span>
+                    </div>
+                </div>
+                <div class="fr">
+                	<p>有53239条评论</p>
+                </div>
+            </div>
+            <div class="evaluation_inner">
+            	<div class="evaluation_inner_head clearfix">
+                	<div class="fl">
+                    	<p class="clearfix"><img class="box_circle fl" src="image/img/sift_l.png"><em class="fl">飞的猪筅森</em></p>
+                    </div>
+                    <div class="fr clearfix">
+                        <div class="all_star fl">
+                            <em class="current"></em>
+                            <em></em>
+                            <em></em>
+                            <em></em>
+                            <em></em>
+                        </div>
+                        <span class="font70 ml2 fl">9.0</span>
+                    </div>
+                </div>
+                <div class="evaluation_inner_infor">
+                	<p>服务不错质量也好，是正品，样式潮流，愉快的购物体验</p>
+                    <ul class="clearfix">
+                    	<li><img class="box_radius" src="image/img/swiper_img.png"></li>
+                        <li><img class="box_radius" src="image/img/swiper_img.png"></li>
+                        <li><img class="box_radius" src="image/img/swiper_img.png"></li>
+                        <li><img class="box_radius" src="image/img/swiper_img.png"></li>
+                        <li><img class="box_radius" src="image/img/swiper_img.png"></li>
+                    </ul>
+                </div>
+                <div class="evaluation_inner_bt clearfix">
+                	<p class="fl font50 color9">2016-02-19<em>16:66</em></p>
+                    <h5 class="fr"><i></i><sub class="fong50 color9">13</sub></h5>
+                </div>
+            </div><!--evaluation_inner ed-->
+        </div><!--评价结束-->
+        <!--商品质询-->
+        <div class="goods_inquiry bg_white box_adorn">
+        	<div class="inquiry_head">
+            	<p>商品咨询</p>
+            </div>
+            <div class="inquiry_infor">
+            	<p class="ques clearfix"><em class="color_f in_b tc fl">Q</em><span class="fl color3">好不好用了，质量咋地好不好用了，质量咋地？</span></p>
+                <p class="answ clearfix"><em class="color_f in_b tc fl">A</em><span class="fl color6">好不好用了，质量咋地好不好用了，质量咋地？</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--wrap ed-->
+<!--详情页面底部开始-->
+<div class="details_food">
+	<div class="type_list">
+        <div class="fl">
+            <i class="current"></i>
+        </div>
+        <div class="operate">
+        	<ul class="average none">
+            	<li><a class="color_f" href="javascript:void(0);">立即购买</a></li>
+                <li><a class="color_f" href="javascript:void(0);">加入购物车</a></li>
+            </ul>
+            <ul class="average none">
+            	<li><a class="color_f" href="javascript:void(0);">商品预约</a></li>
+            </ul>
+            <ul class="average none">
+            	<li><a class="color_f" href="javascript:void(0);">到货通知</a></li>
+            </ul>
+            <ul class="average">
+            	<li><a class="color_f" href="javascript:void(0);">确认</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--详情页面底部结束-->
+
+<!--输入手机号码-->
+<div class="notice_tel current">
+	<h2 class="pr"><em>手机号码</em><span><input class="box_radius" type="tel" name="" placeholder="请输入您的手机号码"></span></h2>
+</div>
+<!--输入手机号码结束-->
+
+<div class="mask none {{mask_hide}}" ng-click="shut_all()"></div>
+<!--选择颜色尺码-->
+<div class="check_norms bg_white {{norms_hide}} none">
+	<h6><i></i></h6>
+	<div class="norms_head border_b clearfix">
+    	<p class="fl"><img class="border_all box_radius pr" src="image/img/sift_l.png"></p>
+        <div class="fl">
+        	<h3>活动价<em>￥79.00</em><del class="color9 ml2">￥199.00</del></h3>
+            <h4>请选择(尺码/颜色/数量)</h4>
+        </div>
+    </div>
+    <div class="norms_inner">
+        <dl class="check_color border_b clearfix">
+        	<dt>颜色</dt>
+            <dd>黑色</dd>
+            <dd>藏青色</dd>
+        </dl>
+        <dl class="check_size border_b clearfix">
+        	<dt>尺码</dt>
+            <dd>M</dd>
+            <dd>XXL</dd>
+        </dl>
+        <div class="num_check border_b">
+        	<p>数量</p>
+            <div class="hendle clearfix">
+            	<h2 class="fl clearfix"><em class="box_radius fl in_b tc color9">-</em><input class="box_radius fl tc font70" name="" value="1" type="text"><em class="fl box_radius fl in_b tc color9">+</em></h2>
+                <h3 class="fl">库存<i>666</i>件</h3>
+            </div>
+        </div>
+    </div>
+    <div class="norms_foot">
+    	<ul class="average">
+        	<li class="tc" ng-click="no_handle()">取消选择</li>
+            <li class="tc color_f">确认选择</li>
+        </ul>
+    </div>
+</div><!--check_norms ed-->
+<!--促销信息-->
+<div class="check_norms offers bg_white {{norms_hide}} none">
+	<h6><i></i></h6>
+	<div class="norms_head border_b clearfix">
+    	<p class="fl"><img class="border_all box_radius pr" src="image/img/sift_l.png"></p>
+        <div class="fl">
+        	<h3>活动价<em>￥79.00</em><del class="color9 ml2">￥199.00</del></h3>
+            <h4>请选择(尺码/颜色/数量)</h4>
+        </div>
+    </div>
+    <div class="offers_inner pa">
+    	<ul>
+        	<li>促销一：商品满300减50元</li>
+            <li>促销一：商品满300减50元</li>
+            <li>促销一：商品满300减50元</li>
+            <li>促销一：商品满300减50元</li>
+        </ul>
+    </div>
+</div><!--check_norms ed-->
+<!--选择赠品-->
+<div class="check_norms present bg_white none {{norms_hide}}">
+	<h6><i></i></h6>
+	<div class="norms_head border_b clearfix">
+    	<p class="fl"><img class="border_all box_radius pr" src="image/img/sift_l.png"></p>
+        <div class="fl">
+        	<h3>活动价<em>￥79.00</em><del class="color9 ml2">￥199.00</del></h3>
+            <h4>请选择(尺码/颜色/数量)</h4>
+        </div>
+    </div>
+    <div class="present_inner pa">
+    	<ul>
+        	<li>不参与赠品活动</li>
+        </ul>
+        <div class="present_list current border_b">
+        	<h3 class="clearfix"><img class="fl" src="image/img/swiper_img.png"><em class="fl">赠送玩具小熊一个</em></h3>
+            <p class="color6">活动日期<span>2016.03.05-2016.03.09</span></p>
+        </div>
+    </div>
+</div><!--check_norms ed-->
+<!--选择地址-->
+<div class="check_area bg_white none">
+    <h6><i></i></h6>
+    <div class="check_area_head">
+    	<h2><em>配送区域</em></h2>
+        <ul class="average">
+        	<li class="current"><a href="javascript:void(0);">省</a></li>
+            <li><a href="javascript:void(0);">市</a></li>
+            <li><a href="javascript:void(0);">区</a></li>
+        </ul>
+    </div>
+    <div class="check_area_inner">
+    	<ul>
+        	<li class="current">太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+            <li>太原</li>
+        </ul>
+    </div>
+</div>

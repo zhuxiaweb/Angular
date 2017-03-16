@@ -1,0 +1,9 @@
+<header>
+	<!--头部左侧按钮-->
+	<span class="lt backto" ng-show="h_backTo" onClick="history.go(-1);"><i></i></span>
+	<h2>{{title}}</h2>
+	<!--头部右侧按钮-->  
+	<span class="rt bind" ng-show="h_bind"><a href="javascript:void(0);">跳过绑定</a></span>
+    <span class="rt skip" ng-show="h_skip"><a href="javascript:void(0);">跳过</a></span>
+    <span class="rt head_nav" ng-show="h_header_nav"><i></i></span>
+</header>

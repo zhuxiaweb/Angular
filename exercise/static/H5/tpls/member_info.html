@@ -1,0 +1,72 @@
+<style>
+.set_member_info .title{width:28%;}
+.set_member_info .info a{width: 71%;padding-right: 0.75rem}
+.set_member_info .info button.btn{border:none;padding-right: 0.75rem}
+.set_member_info .info select{border:none;padding-right: 0.75rem}
+.set_member_info .info i{width: 0.75rem;height: 0.75rem;background-position: -2.2rem 0;position: absolute;top: 50%;right: 0;transform:translateY(-50%);}
+.set_member_info .info .uname i{background: none;
+.pr50{padding-right: 0.5rem}
+.set_member_info .info input{width:80%;}
+</style>
+<ng-header2></ng-header2>
+<div class="wrapper">
+    <div class="padding_lr10 mt5">
+        <div class="set_member_info bg_white box_adorn padding_lr10">
+            <ul class="info">
+                <li class="lh20 border_b pr pr50 uname">
+                    <label class="title in_b fl font70">用户名：</label>
+                    <a href="javascript:void(0);" class="in_b tr fl color3">180******12<i></i></a>
+                </li>
+                <li class="lh20 border_b pr pr50">
+                    <label class="title in_b font70 fl">昵称：</label>
+                    <a href="javascript:void(0);" class="in_b tr fl color9">快去取拉风的昵称吧<i></i></a>
+                </li>
+                <li class="lh20 border_b pr pr50">
+                    <label class="title in_b fl font70">性别：</label>
+                    <select class="color9 lh20 fr" name="sex" size="1">
+                        <option value="" disabled selected>您的性别</option>
+                        <option value="0">女</option>
+                        <option value="1">男</option>
+                    </select>
+                    <i></i>
+                </li>
+                <li class="lh20 pr pr50"  ng-init="time='您的生日(填写后无法修改)'">
+                    <label class="title in_b fl font70">出生日期：</label>
+                    <button id='demo2' ng-click="TimeTag()" class="btn color9 fr lh20" >{{time}}</button>
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+
+        <div class="set_member_info bg_white box_adorn padding_lr10 mt5">
+            <ul class="info">
+                <li class="lh20 border_b pr pr50">
+                    <label class="title in_b font70 fl">实名认证：</label>
+                    <a href="javascript:void(0);" class="in_b tr color9 fl">身份证认证(认证后无法修改)</a>
+                    <i></i>
+                </li>
+                <li class="lh20 border_b pr pr50">
+                    <label class="title in_b font70 fl">绑定手机：</label>
+                    <a href="javascript:void(0);" class="in_b tr fl color9">快去绑定</a>
+                    <i></i>
+                </li>
+                <li class="lh20 border_b pr pr50">
+                    <label class="title in_b font70 fl">修改密码：</label>
+                    <a href="javascript:void(0);" class="in_b tr color9">立即修改</a>
+                    <i></i>
+                </li>
+                <li class="lh20 pr pr50">
+                    <label class="title in_b font70 fl">支付密码：</label>
+                    <a href="javascript:void(0);" class="in_b tr color9">修改密码</a>
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id='result' class="ui-alert"></div>
+    <div class="commodity_foot pa">
+        <a class="in_b color_f tc" href="javascript:void(0);">退出登陆</a>
+    </div>
+</div>
+<!--wrap ed-->

@@ -1,0 +1,39 @@
+<style>
+.send .vcode{border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;border-top: none;background: #2c8ff4;width: 4rem;text-align: center;line-height: 1.5rem;color:#fff;height: 1.5rem;display: inline-block;}
+</style>
+<ng-header></ng-header>
+<div class="wrap">
+	<div class="mt5 padding_lr10">
+    	<div class="login_list border_all box_adorn bg_white">
+            <div class="password clearfix pr margin_lr15">
+                <h2 class="fl"><input class="font70" type="{{type}}" placeholder="请输入您的手机号码" ng-model="password"></h2>
+                <div class="passw fr" ng-if="password">
+                    <i class="pa {{show}} translateY" ng-click="change_type()"></i>
+                    <i class="pa translateY" ng-click="password_remove()"></i>
+                </div>
+                <div class="shape pr">
+                    <em class="border_r translate_init pa in_b"></em>
+                    <em class="border_l pa in_b"></em>
+                </div>
+            </div>
+            <div class="security border_t clearfix pr margin_lr15">
+            	<h2 class="fl"><input class="font70" type="text" placeholder="请输入验证码"></h2>
+                <div class="secut fr">
+                    <a href="javascript:void(0);" class="send"><em class="vcode">获取验证码</em></a>
+                </div>
+            	<div class="shape pr">
+                    <em class="border_r translate_init pa in_b"></em>
+                    <em class="border_l pa in_b"></em>
+                </div>
+            </div>
+        </div>
+        <div class="btn_init mt10">
+            <input type="buttom" value="绑定手机"/>
+        </div>
+    </div>
+</div>
+<!--wrap ed-->
+<!--错误弹框-->
+<div class="error {{error_now}}">
+	<p>您输入的验证码有误</p>
+</div>

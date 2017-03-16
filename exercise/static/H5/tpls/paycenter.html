@@ -1,0 +1,136 @@
+<style type="text/css">
+	.paycenter_head .title i{background-position: -8.65rem 0;height: 2rem;width: 2rem;left:0;}
+	.paycenter_head .title{padding-left: 2rem;width: 90%;margin-left: auto;margin-right:auto}
+	.paycenter_head .title em{line-height: 1rem}
+	.paycenter_head .order_details{top:50%;right:0;width: 3.45rem;transform: translate(0,-50%);}
+	.paycenter_head .title .order_details i{width: 0.75rem;height: 0.75rem;left:70%;background-position: -2.25rem 0;}
+    .title{    width: 80%;
+    text-align: left;
+    padding-top: 0.5rem;
+    margin: 0 auto;
+    line-height: 1rem;}
+    .box{
+        background-color: #fff;
+        z-index: 16;
+        position: fixed;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        z-index: 130;
+        transition: all 0.5;
+       
+        transform: translateX(-50%);
+        top:15%;
+        left:50%;
+        -webkit-transition: all 0.5s;
+        width: 12rem;
+        overflow: hidden;
+    }
+    .box .esc{color:#ccc;right:0.5rem;width:1rem;}
+    .box .money{font-weight: 600;}
+    .box .last{color:#fd3336;}
+    .box label ul li{width: 1.65rem;height: 1.65rem;line-height: 1.65rem;font-size: 0.75rem;float:left;}
+    .box label{padding-bottom: 0.5rem;}
+     #ipt{width:0px;height:0px;}
+</style>
+<ng-header2></ng-header2>
+<div class="wrap">
+	<div class="padding_lr10">
+		<div class="paycenter_head goods_aftersale_head bg_white mt5 box_adorn pr">
+			<p class="title tc pa translate">
+				<i></i>
+				<em class="succ fl tl">
+					<span class="font75">订单等待支付</span><br/>
+					<span class="color9">您已支付￥130，请尽快支付剩余金额</span>
+				</em>
+				
+			</p>
+		</div>
+	</div>
+
+<div class="commodity_listing pay_way bg_white box_adorn margin_lr10">
+            <div class="commodity_listing_head padding_lr10">
+                <em class="font65 fb">请选择支付方式</em>
+            </div>
+            <div class="pay_list margin_lr10 border_t">
+                <div class="pay_infor clearfix pr">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt weixin"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">微信支付</h5>
+                            <p class="color9">推荐已安装微信客户端的用户使用</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_infor clearfix pr">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt pay_zhifubao"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">支付宝支付</h5>
+                            <p class="color9">推荐已安装支付宝客户端的用户使用</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_infor clearfix pr">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt pay_cart"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">银行卡支付</h5>
+                            <p class="color9">支持储蓄卡和信用卡支付</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_infor clearfix pr">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt pay_deposit"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">预存款支付</h5>
+                            <p class="color9">使用预存余额完成支付</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_infor clearfix pr">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt pay_delivery"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">货到付款</h5>
+                            <p class="color9">本商品支持货到付款</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="commodity_foot pa">
+            <a class="in_b color_f tc" href="javascript:void(0);">立即支付</a>
+        </div>
+        <div class="mask"></div>
+        
+        <div class="box box_radius tc">
+            <h1 class="pay_head pr lh20 font70 tc border_b">
+                <!--请输入预存款密码-->
+                <!--<span class="last">密码输入错误</span>-->
+                <span class="last">资产冻结</span> 
+                <a href="javascript:void(0);" class="esc in_b pa">x</a>
+            </h1>
+            <p class="title color6">由于您的密码输入错误次数过多已经被冻结，请24h后再次尝试</p>
+            <!--<p class="money lh20 font75">￥345.00</p>
+            <p class="tl ml5">预存款余额:<span class="last">￥130.00</span></p>
+            <p class="tl ml5">剩余￥215.00可通过其他支付方式支付</p>
+            <label for="ipt" class="in_b">
+                <ul id="clded" class="border_all in_b tc mt5">
+                    <li class="in_b">●</li>
+                    <li class="in_b border_l">●</li>
+                    <li class="in_b border_l"></li>
+                    <li class="in_b border_l"></li>
+                    <li class="in_b border_l"></li>
+                    <li class="in_b border_l"></li>
+                </ul>
+            </label>-->
+            <input type="tel" id="ipt" maxlength="6" ng-change="passWord()" ng-model="passVal"/>
+        </div>
+</div>

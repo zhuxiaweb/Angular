@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ISHOP商城后台管理系统</title>
+<link rel="shortcut icon" href="../favicon.gif" type="image/gif" />
+<link href="../css/style.css" rel="stylesheet" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/ >
+<script type="text/javascript" src="../script/jquery-1.9.1.min.js"></script>
+<script src="../script/jquery.datetimepicker.full.js"></script>
+<script src="../script/index.js"></script>
+</head>
+<body>
+		<div class="workground" id="workground">
+				<div id="content-top">					
+					<div class="breadcrumb_box">
+						<div class="breadcrumb_bg">
+							<p class="fl">您现在的位置：</p>
+							<ul class="breadcrumb">
+								<li><a href="#">业务中心</a></li>
+								<li><a href="#">售前订单</a></li>
+								<li class="active"><a href="#">订单列表</a></li>
+							</ul>
+						</div>
+					</div><!--end_content-head-->
+				</div>
+				<div class="content-head">
+						<div class="head-title">
+							<h4 class=" span-auto">订单搜索</h4>
+							<div class="finder-filter-action-handle"><a href="javascript:void(0);" class="view_detail">收起</a></div>
+						</div>
+						<div class="finder-action clearfix">
+							<form class="finder-search">
+								<div class="tableform">
+									<div>
+										<ul class="finder-search-list">
+											<li><em class="title">订单/交易号：</em><input type="text" class="x-input"></li>
+											<li>
+												<em class="title">订单状态：</em>
+												<select class="x-select">
+													<option>全部</option>
+													<option>PC商城</option>
+													<option>微信商城</option>
+												</select>
+											</li>
+											<li>
+												<em class="title">订单日期：</em>
+												<input id="datetimepicker" class="x-time x-input" type="text" >
+												-
+												<input id="datetimepicker2" class="x-time x-input" type="text" >
+											</li>
+											<li><em class="title">订单类型：</em>
+												<select class="x-select">
+													<option>全部</option>
+													<option>PC商城</option>
+													<option>微信商城</option>
+												</select>
+											</li>
+											<li><em class="title">订单动态：</em><input type="text" class="x-input"></li>
+											<li><em class="title">收货人：</em><input type="text" class="x-input"></li>
+											<li><em class="title">联系方式：</em><input type="text" class="x-input"></li>
+											<li>
+												<div>
+												<em class="title">标签：</em>
+												<div class="model-select-box">
+											 	   <div class="model-select-text" data-value=""></div>
+											 	   <ul class="model-select-option">
+													    <li data-option="1">重点关注<img src="../image/icon08.png"/></li>
+													    <li data-option="2">较为关注<img src="../image/icon09.png"/></li>
+													    <li data-option="3">一般关注<img src="../image/icon10.png"/></li>
+													 </ul>
+												</div>
+												</div>
+											</li>											
+										</ul>
+									</div>
+									
+									<div class="table-action">
+										<button type="submit" class="btn btn-primary"><span><span>确定</span></span></button>
+										<button type="submit" class="btn btn-secondary"><span><span>重置</span></span></button>
+									</div>
+								</div>
+							</form>
+						</div><!--end_finder-action-->
+					</div><!--content-head-->
+				<div class="content-main">
+				<div class="finder-action-items">
+					<button type="submit" class="btn btn-primary"><span><span>新增订单</span></span></button>
+					<div class="pr in_b optBtn">
+						<button type="submit" class="btn btn-primary"><span><span>批量操作</span></span></button>
+						<i></i>
+						<div class="pa batch x-drop-menu">
+							<ul>
+								<li><a href="javascript:void(0);">批量删除</a></li>
+								<li><a href="javascript:void(0);">批量删除</a></li>
+								<li><a href="javascript:void(0);">批量删除</a></li>
+							</ul>
+							<i></i>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary"><span><span>导出</span></span></button>
+					<em class="total">共<span>3142</span>订单</em>
+				</div>
+				<div class="finder-header">
+					<table  width="100%" cellspacing="0" cellpadding="0" id="fieldThead">
+						<thead class="finder-header">
+								<tr>
+									<td>
+										<div class="col-select-opt-inner">
+											<input type="checkbox" id="x-1" class="x-checkbox" >
+											<label class="x-checkbox-label sellist" for="x-1"></label>
+		  								</div>
+		  							</td>
+									<td><div class="cell">订单号</div></td>
+									<td><div class="cell">操作</div></td>
+									<td><div class="cell">平台来源</div></td>
+									<td><div class="cell">下单时间</div></td>
+									<td><div class="cell">会员账号</div></td>
+									<td><div class="cell">订单金额(元)</div></td>
+									<td><div class="cell">订单状态</div></td>
+									<td><div class="cell">支付状态</div></td>
+									<td><div class="cell">发货状态</div></td>
+									<td><div class="cell">收货状态</div></td>
+									<td><div class="cell">评价状态</div></td>
+									<td><div class="cell">支付方式</div></td>
+									<td><div class="cell">动态</div></td>
+									<td><div class="cell">含赠品/配件</div></td>
+									<td><div class="cell">配送方式</div></td>
+									<td><div class="cell">收货人</div></td>
+									<td><div class="cell">联系方式</div></td>
+									<td><div class="cell">收货地址</div></td>
+									<td><div class="cell">是否要发票</div></td>
+									<td><div class="cell">物流单号</div></td>
+									<td><div class="cell">标签</div></td>
+									<td><div class="cell">会员备注</div></td>
+								</tr>
+							</thead>
+					</table>
+				</div>
+				<div class="finder-list" id="reserveStatus">
+						<table width="100%" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr class="row odd first ">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-2" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-2"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell edit">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping">
+													<a href="javascript:void(0)">编辑</a>
+												</span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon09.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first even">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-3" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-3"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping"><a href="javascript:void(0)">编辑</a></span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</div></td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon08.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first ">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-2" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-2"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell edit">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping">
+													<a href="javascript:void(0)">编辑</a>
+												</span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon09.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first even">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-3" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-3"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping"><a href="javascript:void(0)">编辑</a></span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</div></td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon08.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first ">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-2" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-2"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell edit">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping">
+													<a href="javascript:void(0)">编辑</a>
+												</span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon09.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first even">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-3" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-3"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping"><a href="javascript:void(0)">编辑</a></span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</div></td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon08.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+																<tr class="row odd first ">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-2" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-2"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell edit">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping">
+													<a href="javascript:void(0)">编辑</a>
+												</span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon09.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first even">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-3" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-3"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping"><a href="javascript:void(0)">编辑</a></span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</div></td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon08.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+																<tr class="row odd first ">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-2" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-2"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell edit">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping">
+													<a href="javascript:void(0)">编辑</a>
+												</span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon09.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>
+								<tr class="row odd first even">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-3" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-3"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping"><a href="javascript:void(0)">编辑</a></span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</div></td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon08.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>																
+								<tr class="row odd first ">
+									<td>
+										<div class="span-auto">	
+											<input type="checkbox" id="x-2" class="x-checkbox sel" onclick="this.blur()">
+											<label class="x-checkbox-label" for="x-2"></label>
+                            			</div>
+                        			</td>
+									<td ><a href="#">160081234051176</a></td>
+									<td>
+										<div class="cell">
+											<a href="javascript:void(0);">查看</a>
+											<div class="optBtn">
+												<span class="opt-handle droping"><a href="javascript:void(0)">编辑</a></span>
+												<ul class="x-drop-menu">
+													<li class="cur"><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+													<li class=""><a href="javascript:void(0);" target="tab">编辑会员信息</a></li>
+												</ul>
+											</div>
+										</div>
+									</td>
+									<td><div class="cell">手机商城</div></td>
+									<td><div class="cell">2017-01-05 04:12</div></td>
+									<td><div class="cell">权1488901403</div></td>
+									<td><div class="cell">500.00</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">已支付</div></td>
+									<td><div class="cell">已发货</div></td>
+									<td><div class="cell">已收货</div></td>
+									<td><div class="cell">已评价</div></td>
+									<td><div class="cell">支付宝</div></td>
+									<td><div class="cell">进行中</div></td>
+									<td><div class="cell">是</div></td>
+									<td><div class="cell">物流配送</div></td>
+									<td><div class="cell">张三</div></td>
+									<td><div class="cell">1808888888</div></td>
+									<td><div class="cell">上海陆家嘴</div></td>
+									<td><div class="cell">否</div></td>
+									<td><div class="cell">123</div></td>
+									<td><div class="cell"><img src="../image/icon10.png"/></div></td>
+									<td><div class="cell">我要增值发票</div></td>
+								</tr>			
+							</tbody>
+						</table>
+					</div>
+					<div class="finder-pager">
+						<div class="pager">
+							<div>每页<input type="text" value="20"/>条记录</div>
+							<span onclick="" class="disabled">|&lt;</span>
+							<span onclick="" class="prev disabled">1</span>
+							<span onclick="" class="prev disabled">2</span>
+							<span onclick="" class="prev disabled">3</span>
+							<span onclick="" class="prev disabled">4</span>
+							<span onclick="" class="prev disabled">5</span>
+							<span onclick="" class="prev disabled">...</span>
+							<span onclick="" class="prev disabled">30</span>
+							<span onclick="" class="next">&gt;</span>
+							<span onclick="" class="">&gt;|</span>
+						</div>
+					</div>	
+				</div>
+			</div><!--end_container-->
+		</div><!--workground-->
+</body>
+</html>

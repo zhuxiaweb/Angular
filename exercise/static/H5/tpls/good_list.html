@@ -1,0 +1,150 @@
+<style>
+.wrap .pane{ top:1.8rem;}
+</style>
+<div class="goodlist_head pr">
+	<span class="lt backto" onClick="history.go(-1);"><i></i></span>
+    <div class="seek">
+    	<i></i>
+        <input type="search" name="" placeholder="搜索热门商品"/>
+    </div>
+    <span class="rt conversion {{cut}}" ng-click="switchover()"><i></i></span>
+</div>
+<div class="wrap">
+	<div class="sort_title tab_title border_b pa bg_white oh">
+		<a class="in_b color3 border_r fl tc current" href="javascript:void(0);" id="default" ng-click="defaultOrder()">默认</a>
+		<a class="in_b color3 border_r fl tc" href="javascript:void(0);" id="price" ng-click="priceOrder()">价格</a>
+		<a class="in_b color3 border_r fl tc" href="javascript:void(0);" id="sale" ng-click="saleOrder()">销量</a>
+		<a class="in_b color3 border_r fl tc" href="javascript:void(0);" id="filter" ng-click="filterOrder()">筛选</a>
+	</div>
+    <ion-pane>
+    	<ion-content>
+            <div class="mui-content {{good_list}} {{good_block}} clearfix">
+            	<div class="good_block_list pr bg_white {{list_box_adorn}} hot">
+                    <div class="good_block_head {{hide}}">
+                        <a href="javascript:void(0);">
+                            <em></em>
+                            <img class="img_b" src="image/img/swiper_img.png">	
+                        </a>
+                    </div>
+                    <ul class="mui-table-view clearfix {{view_box_adorn}}">
+                        <li class="mui-table-view-cell hot bg_white pr">
+                            <div class="mui-slider-right mui-disabled">
+                                <a class="mui-btn mui-btn-red">移入<br>收藏</a>
+                                <a class="mui-btn mui-btn-yellow">加购<br>物车</a>
+                            </div>
+                            <div class="mui-slider-handle clearfix">
+                                <a href="javascript:void(0);" class="{{show}}">
+                                    <em></em>
+                                    <img src="image/img/swiper_img.png">	
+                                </a>
+                                <div class="info">
+                                    <p class="good_name color3 {{omit}}">小童真皮羊毛栗色单排蝴蝶结经典短款雪地靴 13.5-18.5厘米</p>
+                                    <h3 class="color_f font50 pr in_b box_radius"><em class="font70">￥159</em><span>满200减50</span></h3>
+                                    <h4 class="color9">好评率79%</h4>
+                                    <h5 class="pa"><i></i></h5>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--good_list ed-->
+    	<!--<ion-infinite-scroll class="{{moredata}}" on-infinite="vm.loadMore()" distance="5%" immediate-check="false"></ion-infinite-scroll>-->
+		</ion-content>
+	</ion-pane>
+</div>
+<!--wrap ed-->
+
+<!--筛选弹框-->
+<div class="special">
+    <div class="tk_box">
+        <em class="none"></em><!--灰色遮罩层-->
+        <div class="content">   
+            <div class="filter_items">
+            	<div class="available">
+                	<em>有货</em>
+                    <a class="box_radius tc color3" href="javascript:void(0);" ng-class="{'current':i == 1}" ng-click="hava_availab(1)">仅看有货</a>
+                </div>
+                <div class="price">
+                	<em>价格</em>
+                	<input class="box_radius tc" type="number" name="" maxlength="6" placeholder="最低价">
+                    <span> — </span>
+                    <input class="box_radius tc" type="number" name="" maxlength="6" placeholder="最高价">
+                </div>
+                <div class="sort">
+                	<div class="sort_head">
+                    	<em>品牌</em>
+                        <p class="fr"><span class="in_b omit1 color9 tr">全部</span><i></i></p>
+                    </div>
+                    <ul class="clearfix oh">
+                    	<li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                    </ul>
+                </div>
+                <div class="sort">
+                	<div class="sort_head">
+                    	<em>品牌</em>
+                        <p class="fr"><span class="in_b omit1 color9 tr">全部</span><i></i></p>
+                    </div>
+                    <ul class="clearfix oh">
+                    	<li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                        <li><a class="box_radius tc in_b color3" href="javascript:void(0);" class="omit1">阿迪达斯</a></li>
+                    </ul>
+                </div>
+            </div><!--filter_items ed-->	
+            <div class="fix_btn pa clearfix">
+                <button class="reset font70 fl">重置</button>
+                <button class="confirm font70 fl color_f" ng-click="confirmFilter()">确定</button>
+            </div>
+        </div><!--content ed-->
+    </div><!--tk_box ed-->
+</div>
+
+<!--加入购物车 弹框-->
+<div class="params">
+	<em ng-click="closeCash()"></em><!--灰色遮罩层-->
+	<div class="content translate oh bg_white">
+		<div class="summary clearfix pr">
+			<div class="img fl">
+				<img src="image/img/avge_img.png">
+			</div>
+			<div class="main fl">
+				<p class="name omit1">2017春季新品 专柜同步 修身镂空球...</p>
+				<p class="info clearfix">
+					<span class="price fl font50">￥1399<em class="box_radius color_f">满500减100</em></span>
+					<span class="remain color9 fr">好评率79%</span>
+				</p>
+				<i ng-click="closeCash()"></i><!--关闭按钮-->
+			</div>
+		</div><!--summary ed-->
+		<div class="param">
+			<dl class="clearfix color">
+				<dt>颜色</dt>
+				<dd>黑色</dd>
+                <dd>蓝色</dd>
+			</dl>
+			<dl class="clearfix size">
+				<dt>规格</dt>
+				<dd>L</dd>
+                <dd>XXXL</dd>
+			</dl>
+		</div>
+        <div class="num_check">
+        	<p>数量</p>
+            <div class="hendle clearfix">
+            	<h2 class="fl clearfix"><em class="box_radius fl in_b tc color9">-</em><input class="box_radius fl tc font70" type="text" name="" value="1"/><em class="fl box_radius fl in_b tc color9">+</em></h2>
+                <h3 class="fl">库存<i>666</i>件</h3>
+            </div>
+        </div>
+		<div class="add_cash">
+			<a class="in_b tc color_f font70 mt5" href="javascript:void(0);" ng-click="addCash()">加入购物车</a>
+		</div>
+	</div>
+</div><!--收银台弹框结束-->

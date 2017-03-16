@@ -1,0 +1,40 @@
+<ng-header></ng-header>
+<div class="wrap">
+	<div class="integral_ourse">
+    	<div class="integral_ourse_head bg_white pr oh border_b">
+        	<p class="tr clearfix"><span class="fr">积分说明</span></p>
+            <div class="integral_ourse_head_inner tc">
+            	<p class="font65">我的积分</p>
+                <h2>7600</h2>
+                <input type="button" value="立即兑换"/>
+            </div>
+        </div>
+        <div class="integral_ourse_details box_adorn bg_white">
+        	<div class="integral_ourse_details_list">
+            	<div class="integral_ourse_details_list_head {{integral_show}}" ng-click="look_integral_details()">
+                	<h2 class="font70">积分明细</h2>
+                </div>
+                <div class="integral_list">
+                    <div class="integral_ourse_details_list_inner border_t pr {{details_height}}">
+                        <div class="pa fl translateY">
+                            <h3 class="font70">百胜商城商品兑换</h3>
+                            <p class="color9">2016.02.03&nbsp;&nbsp;12:15</p>
+                        </div>
+                        <div class="pa fr translateY">
+                            <em class="font75">-230</em>
+                        </div>
+                    </div>
+                    <div class="integral_ourse_details_list_inner border_t pr {{details_height}}">
+                        <div class="pa fl translateY">
+                            <h3 class="font70">百胜商城商品兑换</h3>
+                            <p class="color9">2016.02.03&nbsp;&nbsp;12:15</p>
+                        </div>
+                        <div class="pa fr translateY">
+                            <em class="font75 current">230</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--wrap ed-->

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ISHOP商城后台管理系统</title>
+<link rel="shortcut icon" href="../favicon.gif" type="image/gif" />
+<link href="../css/style.css" rel="stylesheet" media="screen, projection" />
+<link rel="stylesheet" type="text/css" href="../css/jquery.datetimepicker.css"/ >
+<script type="text/javascript" src="../script/jquery-1.9.1.min.js"></script>
+<script src="../script/jquery.datetimepicker.full.js"></script>
+<script src="../script/index.js"></script>
+</head>
+<body class="single-page">
+	<noscript>
+	  <div class='noscript error'> 您好，要正常运行，浏览器必须支持Javascript  </div>
+	</noscript>
+	<div class="body" id="body">
+		<div class="container clearfix">
+			<div class="workground">
+				<div class="content-main">
+					<div class="spage-main-head">
+						<h4>新增订单</h4>
+					</div>
+					<div class="spage-main-box">
+						<div class="create-order">
+							<div class="tableform">
+								<div class="box-form">
+									<table>
+	  									<tr>
+											<th><em class="c-red">*</em>配送方式：</th>
+											<td>
+												<select class="x-select">
+													<option>请选择</option>
+														<option>请选择</option>
+													<option>请选择</option>
+												</select>
+											</td>
+	  									</tr>
+		  							</table>
+								</div><!--edn_box-form-->
+							</div><!--end_tableform-->
+							<div class="tableform">
+								<h4 class="title">收货地址</h4>
+								<div class="box-form">
+									<table>
+		  									<tr>
+												<th><div><button type="submit" class="btn btn-c"><span><span>收货地址选择</span></span></button></div></th>
+												<td></td>
+		  									</tr>
+		  									<tr>
+		  										<th>收货人：</th>
+		  										<td><input type="text" class="x-input" disabled="true" value="张三"/></td>
+		  									</tr>
+		  									<tr>
+		  										<th>联系方式：</th>
+		  										<td><input type="text" class="x-input" disabled="true" value="180748337"/></td>
+		  									</tr>
+		  									<tr>
+		  										<th>身份证号码：</th>
+		  										<td><input type="text" class="x-input" disabled="true" value="435843874334"/></td>
+		  									</tr>
+		  									<tr>
+		  										<th>收货地址：</th>
+		  										<td><input type="text" class="x-input" disabled="true" value="上海市（省／直辖市）上海市（市）浦东新区（区）"/></td>
+		  									</tr>
+		  									<tr>
+		  										<th>详细地址：</th>
+		  										<td><input type="text" class="x-input" disabled="true" value="峨山路100号陆家嘴软件园1203室"/></td>
+		  									</tr>		  											  								
+		  							</table>
+								</div><!--edn_box-form-->
+							</div><!--end_tableform-->
+							<div class="tableform">
+								<h4 class="title">优惠信息</h4>
+								<div class="box-form">
+									<table>
+		  								<tr>
+											<th>会员折扣：</th>
+											<td>0.9</td>
+		  								</tr>
+		  								<tr>
+											<th>优惠方案：</th>
+											<td><select class="x-select"><option>满减</option></select></td>
+		  								</tr>
+		  								<tr>
+											<th>可用积分：</th>
+											<td>200</td>
+		  								</tr>
+		  								<tr>
+		  									<th>使用积分：</th>
+		  									<td><input type="text" class="x-input" value="200"/><span>（积分抵扣金额：<em class="c-red">¥20.00</em>）</span></td>
+		  								</tr>
+		  								<tr>
+		  									<th>使用积分：</th>
+		  									<td><input type="text" class="x-input" value="200"/><span>（优惠券抵扣金额：<em class="c-red">¥20.00</em>）</span><span>优惠计算方式：优惠金额=订单金额—订单金额*会员折扣—积分金额—优惠券金额</span></td>
+		  								</tr>
+		  								<tr>
+		  									<th>使用金额(元)：</th>
+		  									<td>70</td>
+		  								</tr>		  									  								
+		  							</table>
+								</div><!--edn_box-form-->
+							</div><!--end_tableform-->
+							<div class="tableform">
+								<h4 class="title">订单信息</h4>
+								<div class="box-form">
+									<table>
+		  								<tr>
+											<th>订单号/交易号：</th>
+											<td></td>
+		  								</tr>
+		  								<tr>
+											<th><em class="c-red">*</em>订单类型：</th>
+											<td><select class="x-select"><option>普通</option></select></td>
+		  								</tr>
+		  								<tr>
+											<th><em class="c-red">*</em>订单动态：</th>
+											<td><select class="x-select"><option>进行中</option></select></td>
+		  								</tr>
+		  								<tr>
+		  									<th>订单金额（不含运费）元：</th>
+		  									<td><input type="text" class="x-input" disabled="true" value="1337"/></td>
+		  								</tr>
+		  								<tr>
+		  									<th>使用积分：</th>
+		  									<td><input type="text" class="x-input" value="200"/><span>（优惠券抵扣金额：<em class="c-red">¥20.00</em>）</span><span>优惠计算方式：优惠金额=订单金额—订单金额*会员折扣—积分金额—优惠券金额</span></td>
+		  								</tr>
+		  								<tr>
+		  									<th>使用金额(元)：</th>
+		  									<td>70</td>
+		  								</tr>
+		  								<tr>
+											<th><em class="c-red">*</em>运费(元)：</th>
+											<td class="wran">
+												<input type="text" class="x-input" value="200"/>
+												<em><i></i><span>未填写运费</span></em>
+											</td>
+		  								</tr>
+		  								<tr>
+											<th><em class="c-red">*</em>实付金额(元)：</th>
+											<td><input type="text" class="x-input" disabled="true" value="200"/><td>
+		  								</tr>
+		  								<tr>
+											<th>支付方式：</th>
+											<td><select class="x-select"><option>普通</option></select></td>
+		  								</tr>		  										  								
+		  								<tr>
+											<th>支付状态：</th>
+											<td>未付款</td>
+		  								</tr>
+		  								<tr>
+											<th>备注：</th>
+											<td><input type="text" class="x-input message" value="200"/></td>
+		  								</tr>
+		  								<tr>
+											<th>是否需要发票：</th>
+											<td>
+												<span><input class="x-payMethod" type="radio" name="payment[pay_app_id]" paytype="" value="wxpayjsapi" checked="checked" moneyamount="" formatmoney="">是</span>
+												<span><input class="x-payMethod" type="radio" name="payment[pay_app_id]" paytype="" value="wxpayjsapi" checked="checked" moneyamount="" formatmoney="">否</span>
+											</td>
+		  								</tr>
+		  							</table>
+								</div><!--edn_box-form-->
+							</div><!--end_tableform-->							
+						</div>											
+					</div><!--end-spage-main-box-->
+					<div class="table-action">
+						<button type="submit" class="btn btn-save-close"><span><span>保存并关闭</span></span></button>
+						<button type="submit" class="btn btn-primary"><span><span>保存</span></span></button>
+						<button type="submit" class="btn btn-secondary"><span><span>关闭</span></span></button>
+						<button type="submit" class="btn btn-secondary"><span><span>上一步</span></span></button>
+					</div>	
+				</div>
+
+			</div>
+		<div>
+	</div>
+	
+	<div id="MODALPANEL" style="position: absolute; background: rgb(51, 51, 51); width: 100%; height: 100%; top: 0px; left: 0px; z-index: 65500; opacity: 0.4;"></div>
+
+		<div id="dialog_1926" class="dialog" style="visibility: visible; zoom: 1; opacity: 1; z-index: 65534; position: absolute; top: 230px; left: 50%;background:#fff;transform:translate(-50%); -webkit-transform:translate(-50%);">
+		<div class="dialog-box" >
+    		<div class="dialog-head clearfix" style="background:#d9e2f2;height:27px;line-height:27px;padding:0 8px; ">
+      			<div class="dialog-title flt">收货地址选择</div>
+      			<a class="btn-close frt" href="javascript:void(0)">x</a>
+    		</div>
+    		<div class="dialog-content-head" style="font-size:0;height:0"></div>
+    		<div container="true" class="dialog-content-body" style="padding:10px;">
+    			<div class="list">
+	    			<div class="tableform">
+			  			<table border="0" cellspacing="0" cellpadding="0">
+			  				<thead>
+			  					<tr>
+			  						<th>商品编号</th>
+			  						<th>商品名称</th>
+			  						<th>商品sku</th>
+			  						<th>商品条形码</th>
+			  						<th>商品规格</th>
+			  						<th>小计（元）</th>
+			  						<th>商品促销</th>
+			  					</tr>
+			  				</thead>
+			  			<tbody>
+			  				<tr>
+			  					<td>
+			  						<div class="col-select-opt-inner">
+										<input type="checkbox" id="x-1" class="x-checkbox" >
+										<label class="x-checkbox-label sellist" for="x-1"></label>
+			  						</div>
+			  						20110127
+			  					</td>
+			  					<td>XXX同款LV大牌上衣</td>
+			  					<td>sku0093</td>
+			  					<td>734340</td>
+			  					<td>734340</td>
+			  					<td>500.00</td>
+			  					<td>无</td>
+			  				</tr>
+			  				<tr>
+			  					<td>
+			  						<div class="col-select-opt-inner">
+										<input type="checkbox" id="x-1" class="x-checkbox" >
+										<label class="x-checkbox-label sellist" for="x-1"></label>
+			  						</div>
+			  						20110127
+			  					</td>
+			  					<td>XXX同款LV大牌上衣</td>
+			  					<td>sku0093</td>
+			  					<td>734340</td>
+			  					<td>734340</td>
+			  					<td>500.00</td>
+			  					<td>无</td>
+			  				</tr>
+			  				<tr>
+			  					<td>
+			  						<div class="col-select-opt-inner">
+										<input type="checkbox" id="x-1" class="x-checkbox" >
+										<label class="x-checkbox-label sellist" for="x-1"></label>
+			  						</div>
+			  						20110127
+			  					</td>
+			  					<td>XXX同款LV大牌上衣</td>
+			  					<td>sku0093</td>
+			  					<td>734340</td>
+			  					<td>734340</td>
+			  					<td>500.00</td>
+			  					<td>无</td>
+			  				</tr>
+			  			</tbody>
+			  			</table>
+		  			</div>
+		  		</div>
+		  	<button type="submit" class="btn btn-c"><span><span>收货地址选择</span></span></button>	
+        </div>
+    	<div class="dialog-content-foot" style="font-size:0;height:0;"></div>
+    	<div class="btn-resize"></div>
+  	</div>
+</body>
+</html>

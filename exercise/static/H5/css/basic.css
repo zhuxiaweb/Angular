@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS reset */
+*{ -webkit-tap-highlight-color:rgba(0,0,0,0); -webkit-box-sizing:border-box; box-sizing:border-box; outline:0;}
+html,body{ width:100%; height:100%; font-family:Helvetica,"Microsoft Yahei",Arial,sans-serif; -webkit-text-size-adjust:none;outline:0; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+body{ word-break:break-all; color:#333; font-size:0.6rem; background-color:#f5f5f5; -webkit-overflow-scrolling:touch; -webkit-font-smoothing: antialiased;}
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,button,select,option,blockquote,table,thead,tbody,tfood,th,tr,td,main,header,nav,article,section,footer,aside,details,figcaption,figure,hgroup,menu,p,em,b,i,del,time{ margin:0; padding:0;}
+a{ text-decoration:none; outline:none;}
+ol li,ul li{ list-style:none;}
+table{ border-collapse:collapse; border-spacing:0;}
+h1,h2,h3,h4,h5,h6{ font-size:100%;font-weight:normal;}
+fieldset,img{ border:0;}
+img{ display:block; vertical-align:top; border:none; -ms-interpolation-mode: bicubic;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{ display:block;}
+address,caption,cite,code,dfn,em,strong,th,var,b,i{ font-style:normal; font-weight:normal;}
+q:before,q:after{content:''}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-.5em}
+sub{bottom:-.25em}
+input,button,select,textarea,option{outline:none; background:none; -webkit-appearance:none; border-radius:0; box-shadow:none;}
+input[type=number] { -moz-appearance:textfield;}
+input{ line-height:normal;}
+::-webkit-input[type=number]-placeholder{ color:#b1b6b9;}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance:none; margin: 0;}
+textarea,input{ border:0 none; color:#333;}
+::-webkit-search-cancel-button {display: none;}
+textarea{resize:none}
+/*样式*/
+.average{ display:box; display:-webkit-box; display:flex; display:-webkit-flex;}
+.average li{ box-flex:1; -webkit-box-flex:1; flex:1; -webkit-flex:1;}
+.average>em{ box-flex:1; -webkit-box-flex:1; flex:1; -webkit-flex:1;}
+::-webkit-input-placeholder{ color:#999999;}
+:-moz-placeholder{ color:#999999;}
+::-moz-placeholder{  color:#999999;}
+:-ms-input-placeholder{  color:#999999;}
+/*通用类*/
+.w100{ width:100vw;}
+.h100{ width:100vh;}
+.mt1{ margin-top:0.1rem;}
+.mt2{ margin-top:0.2rem;}
+.mt5{ margin-top:0.5rem;}
+.ml1{ margin-left:0.1rem;}
+.ml2{ margin-left:0.2rem;}
+.ml5{ margin-left:0.5rem;}
+.mr1{ margin-right:0.1rem;}
+.mr2{ margin-right:0.2rem;}
+.mr5{ margin-right:0.5rem;}
+.mt10{ margin-top:1rem;}
+.mt10_auto{ margin:1rem 0;}
+.mt12_auto{ margin:1.2rem 0;}
+.margin_lr10{ margin:0 10px;}
+.margin_lr15{ margin:0 15px;}
+.padding_lr10{ padding:0 10px;}
+.none{ display:none;}
+.block{ display:block;}
+.in_b{ display:inline-block;}
+.clear{ clear:both;}
+.fl{ float:left;}
+.fr{ float:right;}
+.tl{ text-align:left;}
+.tc{ text-align:center;}
+.tr{ text-align:right;}
+.vm{ vertical-align:middle;}
+.vtb{ vertical-align:text-bottom;}
+.vt{ vertical-align:top;}
+.oh{ overflow:hidden;}
+.pa{ position:absolute;}
+.pr{ position:relative;}
+.fb{ font-weight:bold;}
+.udl{ text-decoration:underline;}
+.bg_white{ background-color:#fff;}
+.color0{ color:#000;}
+.color3{ color:#333;}
+.color6{ color:#666;}
+.color9{ color:#999;}
+.color_f{ color:#fff;}
+.font50{ font-size:0.5rem;}
+.font55{ font-size:0.55rem;}
+.font65{ font-size:0.65rem;}
+.font70{ font-size:0.7rem;}
+.font75{ font-size:0.75rem;}
+.clearfix:after{clear:both;content:"\0020";display:block;height:0; font-size:0px;visibility:hidden;}
+/*透明遮罩层*/
+.layer{ position:fixed; background-color:#fff; width:100%; height:100%; opacity:0; top:0; left:0; z-index:15;}
+/*灰色遮罩层*/
+.mask{ position:fixed; background-color:#000; width:100%; height:100%; opacity:0.5; top:0; left:0; z-index:15; transition:all 0.5s linear;}
+.mask.hide{ opacity:0; height:0;}
+/*错误提示条*/
+:root .error{ position:absolute; top:0.2rem; left:1rem; right:1rem; background-color:#000; opacity:0.8; border-radius:0 0 4px 4px; -webkit-border-radius:0 0 4px 4px; height:2rem; z-index:5;}
+.error.current{ top:2.2rem; transition:all 0.55s ease-in; -webkit-transition:all 0.15s ease-in-out;}
+.error p{ color:#fff; font-size:0.65rem; line-height:2rem; text-align:center;}
+/*文字省略三个小点*/
+.omit1{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.omit2{ overflow:hidden; text-overflow:ellipsis; text-overflow:-o-ellipsis-lastline; display:-webkit-box;-webkit-line-clamp:2; -webkit-box-orient:vertical;}
+.omit3{ overflow:hidden; text-overflow:ellipsis; text-overflow:-o-ellipsis-lastline; display:-webkit-box;-webkit-line-clamp:3; -webkit-box-orient:vertical;}
+/*div 样式修饰*/
+.box_radius{ border-radius:3px; -webkit-border-radius:3px;}
+.box_circle{ border-radius:100%; -webkit-border-radius:100%;}
+.box_adorn{ border-radius:4px; -webkit-border-radius:4px; box-shadow:0 0 4px #e7e7e7; -webkit-box-shadow:0 0 5px #e7e7e7;}
+.transf{ transform:translateY(-50%); -webkit-transform:translateY(-50%); top:50%;}
+.translate_init{ transform:translate(-50%,-50%); -webkit-transform:translate(-50%，-50%);}
+.translate{ transform:translate(-50%,-50%); -webkit-transform:translate(-50%，-50%); top:50%; left:50%;}
+.translateX{ transform:translateX(-50%); -webkit-transform:translateX(-50%); left:50%;}
+.translateY{ transform:translateY(-50%); -webkit-transform:translateY(-50%); top:50%;}
+/*边框*/
+.border_all{ border:1px solid #e1e1e1;}
+.border_t{ border-top:1px solid #e1e1e1;}
+.border_b{ border-bottom:1px solid #e1e1e1;}
+.border_l{ border-left:1px solid #e1e1e1;}
+.border_r{ border-right:1px solid #e1e1e1;}
+/*图片样式*/
+.img_b{ display:block; width:100%;}
+/*默认input  按钮 见登录页面*/
+.btn_init input{ display:inline-block; height:2.2rem; width:100%; background-color:#bbb; font-size:0.95rem; color:#fff; text-align:center; line-height:2.2rem; border-radius:4px; -webkit-border-radius:4px;}
+.btn_init>h4 input.ok,.btn_init>h4 input.current,.btn_init .set_name input.ok{ background-color:#2c8ff4;}
+.btn_init2 input{ display:inline-block; height:2.2rem; width:100%; background-color:#bbb; font-size:0.95rem; color:#fff; text-align:center; line-height:2.2rem;position: fixed;bottom: 0;background-color:#2c8ff4;}
