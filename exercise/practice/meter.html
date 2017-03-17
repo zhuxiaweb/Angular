@@ -1,0 +1,18 @@
+<!doctype html>
+<html >
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<script src="js/angular.min.js"></script>
+</head>
+
+<body ng-app="">
+<input type="number" ng-model="value">
+<meter value="{{value}}" max="100">50%</meter>
+<br/><br/>
+<progress value="{{value}}" max="100"></progress>
+</body>
+</html>

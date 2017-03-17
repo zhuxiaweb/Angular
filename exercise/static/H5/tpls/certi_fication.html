@@ -1,0 +1,57 @@
+<style>
+.set_member_name .info input{width:90%;height: 100%;}
+.certification .files input{display: none;}
+.certification .files label{width: 90%;height: 5.5rem;display: inline-block;background: #eee;border:2px dashed #e3e3d3;}
+.certification .files{padding: 0.5rem 0rem;}
+.certification .add{top: 25%;left: 37.5%;color:#ccc;}
+.certification .add em{font-size: 1.5rem}
+</style>
+<div class="cart pr">
+	<span class="lt backto" onClick="history.go(-1);"><i></i></span>
+	<h2>实名认证</h2>
+    <div class="cart_hend fr clearfix">
+    	<em class="fl">完成</em>
+        <em class="fl pr"><i></i></em>
+    </div>
+    <div class="header_nav box_radius pa none">
+    	<ul>
+        	<li class="clearfix"><a href="javascript:void(0);"><i></i><em class="fl color_f font65">首页</em></a></li>
+            <li class="clearfix"><a href="javascript:void(0);"><i></i><em class="fl color_f font65">分类</em></a></li>
+            <li class="clearfix"><a href="javascript:void(0);"><i></i><em class="fl color_f font65">购物车</em></a></li>
+            <li class="clearfix"><a href="javascript:void(0);"><i></i><em class="fl color_f font65">我的</em></a></li>
+        </ul>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="certification padding_lr10 mt5"> 
+        <h1 class="padding_lr10 color9">请填写您身份证上真实信息，以便于报送审核</h1>
+        <div class="mt5">
+            <div class="login_list border_all box_adorn bg_white">
+                <div class="account clearfix border_t pr margin_lr15">
+                    <h2 class="fl"><input class="font70" type="text" placeholder="请输入您的真实姓名" ng-model="account"></h2>
+                    <div class="aunt fr" ng-if="account"><i class="pa translateY"></i></div>
+                </div>
+            <div class="password border_t clearfix pr margin_lr15">
+                <h2 class="fl"><input class="font70" type="{{type}}" placeholder="请输入您的身份证号码" ng-model="password"></h2>
+                <div class="shape pr">
+                    <em class="border_r translate_init pa in_b"></em>
+                    <em class="border_l pa in_b"></em>
+                </div>
+            </div>
+        </div>
+         <h1 class="padding_lr10 color9 mt5">上传身份证图片,仅用海关审核</h1>
+         <div class="bg_white border_all mt5">
+            <ul class="average files tc">
+                <li class="pr"><label><input type="file"><div class="add pa"><em>+</em><p>正面照片</p></div></label></li>
+                <li class="pr"><label><input type="file"><div class="add pa"><em>+</em><p>背面照片</p></div></label></li>
+            </ul>
+         </div>
+    </div>
+        <div class="btn_init mt12_auto">
+            <a href="javascript:void(0);" class="set_name"><input class="ok" type="buttom" value="提交"/></a>
+        </div>
+    </div>
+</div>
+<!--wrap ed-->
+
+

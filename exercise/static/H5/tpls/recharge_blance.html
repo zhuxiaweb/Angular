@@ -1,0 +1,71 @@
+<style>
+    .wallet_head{height: 11.2rem;padding-top: 1rem;}
+    .wallet_head>h4{line-height: 3;}
+    .wallet_head em{font-size:2.5rem;margin-bottom: 3rem;}
+    .wallet_head a{line-height: 2.3;font-size:1rem;border: 1px solid #2c8ff4;color:#2c8ff4;margin-top:1.5rem;width:70%;border-radius:30px;}
+    .wallet_info{margin-top: 0.5rem;}
+    .wallet_info_head{line-height: 2.2rem;background: url(image/skip_bottom.png) no-repeat right center;background-size:1rem;}
+    .wallet_info_head.on{background-image: url(image/skip_top.png);}
+    .wallet_info>ul{transition:0.5s ease height;}
+    .wallet_info>ul.off{height: 0px;}
+    .wallet_info>ul>li{height: 3rem;}
+    .wallet_info>ul>li em{right:0;color:#666;}
+    .wallet_info>ul>li em.plus{color:#fd3336;}
+    .pay_list .pay_infor>div{left:0;right:1.5rem;}
+   .pay_list .pay_infor>h3{right: 0;}
+   .pay_list .pay_infor>div{border:none;}
+</style>
+<ng-header2></ng-header2>
+<div class="wrap">
+	<div class="personal_wallet_page padding_lr10 mt5">
+        <div class="login_list border_all box_adorn bg_white">
+            <div class="account clearfix border_t pr margin_lr15">
+                <h2 class="fl"><input class="font70 ng-pristine ng-untouched ng-valid" type="text" placeholder="请输入充值金额" ng-model="account"></h2>
+                <!-- ngIf: account -->
+                <div class="aunt fr" ng-if="account">           
+                    <i class="pa translateY" ng-click="account_remove()"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="commodity_listing pay_way bg_white box_adorn margin_lr10">
+            <div class="commodity_listing_head padding_lr10">
+                <em class="font65 fb">支付方式</em>
+                <p class="fr tr font65 omit1">还需支付<span class="ml2">-￥23.50</span></p>
+            </div>
+            <div class="pay_list margin_lr10 border_t">
+                <div class="pay_infor clearfix pr border_b">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt weixin"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">微信支付</h5>
+                            <p class="color9">推荐已安装微信客户端的用户使用</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_infor clearfix pr border_t">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt pay_zhifubao"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">支付宝支付</h5>
+                            <p class="color9">推荐已安装支付宝客户端的用户使用</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay_infor clearfix pr border_t">
+                    <h3 class="fl pa"><i></i></h3>
+                    <div class="fl clearfix pa">
+                        <h4 class="fl mr5"><i class="vbt pay_cart"></i></h4>
+                        <div class="name fl">
+                            <h5 class="font75">银行卡支付</h5>
+                            <p class="color9">支持储蓄卡和信用卡支付</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<!--wrap ed-->
+<div class="mask none"></div>

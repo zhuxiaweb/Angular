@@ -1,0 +1,72 @@
+<ng-header></ng-header>
+<div class="wrap">
+	<div class="login register bind">
+    	<div class="register_head pr">
+        	<ul class="clearfix average">
+            	<li class="fl" ng-class="{'current':index == 1}" ng-click="register_way(1)"><a class="in_b font65 color9" href="javascript:void(0);">手机注册</a></li>
+                <li class="fl" ng-class="{'current':index == 2}" ng-click="register_way(2)"><a class="in_b font65 color9" href="javascript:void(0);">邮箱注册</a></li>
+                <li class="fl" ng-class="{'current':index == 3}" ng-click="register_way(2)"><a class="in_b font65 color9" href="javascript:void(0);">用户名注册</a></li>
+            </ul>
+        </div>
+        <div class="login_list border_all box_adorn bg_white" ng-show="index==1">
+        	<div class="account clearfix border_t pr margin_lr15">
+                <h2 class="fl"><input class="font70" type="text" placeholder="请输入您的手机号码" ng-model="tel" maxlength="11"></h2>
+                <div class="aunt fr" ng-if="tel">           
+                    <i class="pa translateY" ng-click="tel_remove()"></i>
+                </div>
+            </div>
+            <div class="security clearfix border_t pr margin_lr15">
+            	<h2 class="fl"><input class="font70" type="text" placeholder="请输入手机验证码" ng-model="reg_yz" maxlength="4"></h2>
+                <div class="secut fr">
+                    <i class="pa translateY" ng-if="reg_yz" ng-click="reg_yz_remove()"></i>
+                    <input type="button" ng-click="getCode()" class="security_code color_f tc font70 {{ecurit_code}}" ng-value="text" ng-disabled="!tel">
+                </div>
+            	<div class="shape pr">
+                    <em class="border_r translate_init pa in_b"></em>
+                    <em class="border_l pa in_b"></em>
+                </div>
+            </div>
+            <div class="password clearfix border_t pr margin_lr15">
+                <h2 class="fl"><input class="font70" type="{{type}}" placeholder="请输入您的密码" ng-model="password"></h2>
+                <div class="passw fr" ng-if="password">
+                    <i class="pa translateY {{show}}" ng-click="change_type()"></i>
+                    <i class="pa translateY" ng-click="password_remove()"></i>
+                </div>
+                <div class="shape pr">
+                    <em class="border_r translate_init pa in_b"></em>
+                    <em class="border_l pa in_b"></em>
+                </div>
+            </div>
+        </div><!--login_list ed-->
+        <div class="login_list border_all box_adorn bg_white" ng-show="index==2">
+        	<div class="account clearfix border_t pr margin_lr15">
+                <h2 class="fl"><input class="font70" type="text" placeholder="请输入您的邮箱" ng-model="mail"></h2>
+                <div class="aunt fr" ng-if="mail">           
+                    <i class="pa translateY" ng-click="mail_remove()"></i>
+                </div>
+            </div>
+            <div class="password clearfix border_t pr margin_lr15">
+                <h2 class="fl"><input class="font70" type="{{typed}}" placeholder="请输入您的密码" ng-model="mail_password"></h2>
+                <div class="passw fr" ng-if="mail_password">
+                    <i class="pa translateY {{showed}}" ng-click="mail_change_type()"></i>
+                    <i class="pa translateY" ng-click="mail_password_remove()"></i>
+                </div>
+                <div class="shape pr">
+                    <em class="border_r translate_init pa in_b"></em>
+                    <em class="border_l pa in_b"></em>
+                </div>
+            </div>
+        </div><!--login_list ed-->
+        <div class="login_headle">
+        	<h3 class="{{check_keep}}" ng-click="keep_loginInfor()"><i class="vm"></i><em class="vm font65 color6">我已经阅读并同意<a href="javascript:void(0);">《用户注册协议》</a></em></h3>
+            <h4 class="btn_init {{reg_tel_btn}}"><input class="{{tel_ok}}" type="button" name="" value="注册" ng-disabled="!tel" ng-disabled="!reg_yz" ng-disabled="password"/></h4>
+            <h4 class="btn_init {{reg_mail_btn}}"><input class="{{mail_ok}}" type="button" name="" value="注册" ng-disabled="!mail" ng-disabled="!mail_password"/></h4>
+            <p class="font70 tc mt10">已有帐号，<a href="javascript:void(0);">立即登录</a></p>
+        </div>
+    </div>
+</div>
+<!--wrap ed-->
+<!--错误弹框-->
+<div class="error {{error_now}}">
+	<p>您输入的验证码有误</p>
+</div>

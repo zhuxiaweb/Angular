@@ -1,0 +1,50 @@
+/*通用*/
+.none{ display:none;}
+.box_radius{ border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px; -moz-border-radius:3px; -ms-border-radius:3px;}
+.omit1{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.border_all{ border:1px solid #bbb;}
+.border_l{ border-left:1px solid #bbb;}
+.border_r{ border-right:1px solid #bbb;}
+.border_t{ border-top:1px solid #bbb;}
+.border_b{ border-bottom:1px solid #bbb;}
+.imp_none{ display:none!important;}
+/*登录*/
+.login{ width:100%; height:100%; background:url(../image/login/login_bg.png) no-repeat center; background-size:cover;}
+.login .login_accound{ width:1400px; height:506px; top:50%; left:50%; margin:-310px 0 0 -700px; background:url(../image/login/login_accound_bg.png) no-repeat; background-size:cover;}
+.login .login_code{ width:1400px; height:506px; top:50%; left:50%; margin:-310px 0 0 -700px; background:url(../image/login/login_code_bg.png) no-repeat; background-size:cover;}
+.login_accound_list,.login_code_list{ width:360px; height:310px; left:43%; top:32%;}
+.login_accound_list_inner,.login_code_list_inner{ margin:0 0 0 40px; top:46%; transform:translate(0,-50%); -webkit-transform:translate(0,-50%); -moz-transform:translate(0,-50%); -ms-transform:translate(0,-50%); -o-transform:translate(0,-50%);}
+.login_code_list_inner{ margin-left:10px; left:50%;transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); -moz-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%);}
+
+.accound_infor>div{ margin-bottom:10px;}
+.accound_infor>div i,.accound_handle>h4 i{ display:inline-block; background:url(../image/login/login_icon.png) no-repeat; background-size:137px 24px; right:6px; top:3px;}
+.accound_infor>div.accound_name i{ width:24px; height:24px; background-position:-65px 0;}
+.accound_infor>div.accound_name.remove i,.accound_infor>div.accound_password.remove i{ width:17px; height:17px; background-position:-24px 0; top:6px;}
+.accound_infor>div.accound_name.current i{ background-position:-89px 0;}
+.accound_infor>div.accound_name.current,.accound_infor>div.accound_password.current,.accound_infor>div.auth_code .current{ border:1px solid #2c8ff4; box-shadow:0 0 8px #c0dffd;}
+.accound_infor>div.accound_name.fault,.accound_infor>div.accound_password.fault,.accound_infor>div.auth_code .fault{ border:1px solid #fd1c31; box-shadow:0 0 8px #ffc0c6;}
+.accound_infor>div.accound_password i{ width:24px; height:24px; background-position:-113px 0;}
+.accound_infor>div.accound_password.current i{ background-position:-41px 0;}
+.accound_infor>div.auth_code i{ width:17px; height:17px; background-position:-24px 0;}
+
+.accound_head span{ margin-left:18px; padding-left:18px; border-left:2px solid #bbb}
+.accound_infor{ margin-top:25px;} 
+.accound_infor>div{ width:260px; height:30px;}
+.accound_infor>div>input{ height:30px; width:200px; line-height:30px; padding-left:1em;}
+.accound_infor>div.auth_code .fl{ width:175px;}
+.accound_infor>div.auth_code .fl input{ height:30px; width:130px; line-height:30px; padding-left:1em;}
+.accound_infor>div.auth_code .fl i{ top:6px;}
+.accound_infor>div.auth_code .fr img{ height:32px; width:auto;}
+.accound_handle>a{ display:inline-block; height:28px; width:80px; line-height:28px; text-align:center; color:#fff; font-size:12px; background-color:#2c8ff4;}
+.accound_handle>h4{ line-height:28px; margin-left:25px;}
+.accound_handle>h4 i{ width:12px; height:12px; background-position:-12px 0; position:relative; top:2px; left:0; margin-right:5px;}
+.accound_handle>h4.current i{background-position:0 0;}
+.login_bottom{ bottom:10px; left:0; right:0; text-align:center;}
+/*错误提示*/
+.accound_infor .error{ height:28px; padding:0 8px; box-shadow:0 0 8px #ffc0c6; line-height:28px; border:1px solid #fd1c31; color:#fd1c31; top:0; right:0; transform:translate(120%,0);}
+.error span { display:block; width:0; height:0; border-width:0 6px 6px; border-style:solid; border-color:transparent transparent #fd1c31; position:absolute; top:12px; left:-10px;transform:rotate(270deg);}
+.error em {display: block;width: 0;height: 0;border-width: 0 10px 10px; border-style: solid;border-color: transparent transparent #fff;position:absolute; top:1px; left:-10px;}
+/*二维码登录*/
+.login_code_list_inner h3{ color:#2c8ff4; text-align:center;}
+.login_code_list_inner p{ font-size:12px; text-align:center; margin-top:5px;}
+.login>div>h6{ left:70%; width:70px; height:70px; top:33%;}

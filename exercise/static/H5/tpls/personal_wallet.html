@@ -1,0 +1,47 @@
+<style>
+    .wallet_head{height: 11.2rem;padding-top: 1rem;}
+    .wallet_head>h4{line-height: 3;}
+    .wallet_head em{font-size:2.5rem;margin-bottom: 3rem;}
+    .wallet_head a{line-height: 2.3;font-size:1rem;border: 1px solid #2c8ff4;color:#2c8ff4;margin-top:1.5rem;width:70%;border-radius:30px;}
+    .wallet_info{margin-top: 0.5rem;}
+    .wallet_info_head{line-height: 2.2rem;background: url(image/skip_bottom.png) no-repeat right center;background-size:1rem;}
+    .wallet_info_head.on{background-image: url(image/skip_top.png);}
+    .wallet_info>ul{transition:0.5s ease height;}
+    .wallet_info>ul.off{height: 0px;}
+    .wallet_info>ul>li{height: 3rem;}
+    .wallet_info>ul>li em{right:0;color:#666;}
+    .wallet_info>ul>li em.plus{color:#fd3336;}
+</style>
+<ng-header2></ng-header2>
+<div class="wrap">
+	<div class="personal_wallet_page">
+        <div class="wallet_head tc bg_white">
+            <h4>我的余额</h4>
+            <p class="font75">￥<em>50</em></p>
+            <a href="javascript:void(0);" class="in_b"><span>立即充值</span></a>
+        </div>
+        <div class="wallet_info margin_lr10 box_radius box_adorn bg_white">
+            <div class="wallet_info_head font75 margin_lr10 on" ng-click="showList()">
+                账户明细
+            </div>
+            <ul class="margin_lr10" ng-hide="hides">
+                <li class="pr border_t">
+                    <div class="pa translateY">
+                        <h3 class="font70 color6">百胜商城商品购买</h3>
+                        <p class="color9 font65">2016.02.03 12:15</p>
+                    </div>
+                    <em class="pa translateY font70">-230.00</em>
+                </li>
+                <li class="pr border_t">
+                    <div class="pa translateY">
+                        <h3 class="font70 color6">百胜商城购物返现</h3>
+                        <p class="color9 font65">2016.02.03 12:15</p>
+                    </div>
+                    <em class="pa translateY font70 plus">+10.00</em>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--wrap ed-->
+<div class="mask none"></div>

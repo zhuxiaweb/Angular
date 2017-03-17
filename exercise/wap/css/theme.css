@@ -1,0 +1,314 @@
+@charset "utf-8";
+
+/* 登录、注册、忘记密码通用边框 */
+.wrapper{ position:absolute;
+    top: 2.2rem;
+    bottom: 0;
+    left: 0;
+    right:0;
+    z-index: 10;
+    padding-top:1rem;
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;
+ }
+
+/*登录*/
+.login_content {
+    padding: 0 0.25rem;
+}
+
+.login_content .login_zhmm{
+     background: url(../images/login_contentbg.png) no-repeat center center;
+     background-size:100% auto;
+}
+
+.login_content .login_zhmm{
+     padding: 0 10px;
+}
+
+.login_content .login_zhmm li input{
+    height: 2.5rem;
+    width:80%;
+    background: none;
+    line-height: 2.5rem;
+
+}
+
+.login_content .login_zhmm li span{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_inputclear.png) no-repeat center center;
+    background-size:0.7rem 0.7rem;
+    float:right;
+}
+
+.login_content .login_zhmm li .login_pashide{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_pashide.png) no-repeat center center;
+    background-size:1.25rem 0.35rem;
+    float: right;
+}
+
+.login_content .login_zhmm li em.login_passhow{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_passhow.png) no-repeat center center;
+    background-size:1.1rem 0.67rem;
+    float: right;
+}
+
+
+
+.login_content .login_zhmm ul li:first-child {
+    border-bottom: 1px solid #e1e1e1;
+}
+
+
+.login_content .login_check{
+    margin-top: 0.6rem;
+    height: 0.65rem;
+}
+
+/* .login_content .login_check .login_imgcheck{
+    float:left;
+    width: 0.6rem;
+    height: 0.65rem;
+    margin-left:15px;
+} */
+
+.login_content .login_check p.login_imgcheck{
+    padding-left: 1rem;
+    background: url(../images/login_check.png) no-repeat 0.2rem center;
+    background-size: 0.6rem 0.65rem;
+}
+
+.login_content .login_check p{
+    padding-left: 1rem;
+    background: url(../images/login_uncheck.png) no-repeat 0.2rem center;
+    background-size: 0.6rem 0.65rem;
+}
+
+
+.login_content .login_check p{
+    float: left;
+     margin-left: 0.2rem;
+     font-size: 0.65rem;
+     line-height: 0.65rem
+}
+
+
+.login_content .login_btn{
+    padding: 0 0.25rem;
+    margin: 0.5rem 0 1rem;
+}
+.login_content button{
+    background-color:#bbbbbb;
+    width: 100%;
+    height:2.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.login_content .shortcuts{
+    height:1.6rem
+}
+.login_content .shortcuts li{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.login_content .shortcuts li a{
+    font-size: 0.75rem;
+}
+
+.login_content .shortcuts ul li:first-child{
+    background:  url(../images/login_v.png) no-repeat center right;
+    background-size:1px 100%;
+}
+
+.login_entry{
+    padding: 3rem 0.5rem ;
+}
+.login_entry>p{
+    height: 1px;
+    background-color: #999;
+    position:relative;
+   margin-bottom: 2rem;
+}
+
+.login_entry>p em{
+    display: inline-block;
+    width: 9.5rem;
+    font-size: 0.6rem;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #999;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+
+}
+
+.login_entry ul li{
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.login_entry ul li img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+/*忘记密码*/
+.wrapper.Retrieve_password{
+	margin:0 0.25rem;
+}
+	
+.login_list{
+	background:#fff;
+	border:1px solid #dfdfdf;
+	 box-shadow:0 0 5px #e7e7e7;
+	 padding:0 0.5rem;
+}
+.login_list>div{
+	height:2.5rem;
+	line-height:2.5rem;  
+}
+
+.account span, .securityCode span, .securityImg span{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_inputclear.png) no-repeat center center;
+    background-size:0.7rem 0.7rem;
+    float:right;
+}
+
+.login_list .security{
+	border-top:1px solid #e1e1e1;
+}
+
+.security .securityCode,.security .securityImg{
+	width:62%;
+}
+
+.login_list .security .code_btn{
+	background-color:#bbb;
+	color:#fff;
+	font-size:0.7rem;
+	border-radius:0 0 4px 4px;
+	height:1.75rem;
+	width:5rem;
+	line-height:1.75rem;
+	display:inline-block;
+}
+
+.login_list .security button.code_btn.current{
+	background-color:#2c8ff4;
+}
+
+.security img{
+	height:1.75rem;
+	width:5rem;
+	display:inline-block;
+	float:right;
+}
+
+.shape em{
+	background-color:#f5f5f5;
+	height:0.6rem;
+	width:0.6rem;
+	border-radius:50%;
+	display:inline-block;
+}
+
+.shape em:nth-child(1){
+	border-right:1px solid #e1e1e1;	
+	transform:translate(-50%,-50%);
+	top:0;
+	left:-0.6rem;
+}
+
+.shape em:nth-child(2){
+	border-left:1px solid #e1e1e1;	
+	transform:translate(50%,-50%);
+	top:0;
+	right:-0.6rem;
+}
+
+.bind_tel button{
+	font-size:0.9rem;
+	margin:2rem 0.25rem;
+	background-color:#bbb;
+	width:100%;
+	height:2.5rem;
+	line-height:2.5rem;
+	color:#fff;
+}
+
+.bind_tel button.current{
+	background-color:#2c8ff4;
+}
+/*忘记密码下一步*/
+
+.password-border{
+	padding:0 0.25rem;
+}
+ .new-password{
+	background-color:#fff;
+	padding:0 10px;
+	
+}
+.new-password>span em:nth-child(2){
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_pashide.png) no-repeat center center;
+    background-size:1.25rem 0.35rem;
+}
+
+.new-password>span em:nth-child(2).show{
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_passhow.png) no-repeat center center;
+    background-size:1.25rem 0.7rem;
+}
+
+.new-password>span em:nth-child(1){
+    display: inline-block;
+    width: 10%;
+    height: 2.5rem;
+    background: url(../images/login_inputclear.png) no-repeat center center;
+    background-size:0.7rem 0.7rem;
+}
+
+
+.new-password>input{
+    height: 2.5rem;
+    width:80%;
+	background:none;
+    line-height: 2.5rem;
+
+}
+
+.password-border button{
+	background-color:#2c8ff4;
+	color:#fff;
+	height:2.5rem;
+	line-height:2.5rem;
+	width:100%;
+	margin-top:1rem;
+	font-size:0.9rem;
+	cursor:pointer;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>ISHOP商城后台管理系统</title>
+<link rel="shortcut icon" href="../favicon.gif" type="image/gif" />
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="../css/theme.css"/>
+</head>
+<body>
+<div class="login pr oh">
+	<!--用户名登录-->
+	<div class="login_accound pa none">
+    	<div class="login_accound_list pa">
+        	<div class="login_accound_list_inner pa">
+                <div class="accound_head">
+                    <h2><img class="vm" src="../image/login/ishop_logo.png"/><span class="vm font14 color6 border_l">业内最专业的商城</span></h2>
+                </div>
+                <div class="accound_infor">
+                    <div class="accound_name border_all box_radius fault pr">
+                        <input type="text" name="" placeholder="请输入用户名">
+                        <i class="pa"></i>
+                        <div class="error box_radius pa"><span><em></em></span>用户名错误</div>
+                    </div>
+                    <div class="accound_password border_all box_radius pr">
+                        <input type="password" name="" placeholder="请输入密码">
+                        <i class="pa"></i>
+                        <div class="error box_radius pa"><span><em></em></span>密码错误</div>
+                    </div>
+                    <div class="auth_code pr">
+                    	<div class="fl pr border_all box_radius">
+                        	<input type="text" name="" placeholder="请输入验证码">
+                        	<i class="pa imp_none"></i>
+                            
+                        </div>
+                        <div class="fr">
+                        	<img class="box_radius" class="block" src="../image/login/system_img.png"/>
+                        </div>
+                        <div class="error box_radius pa"><span><em></em></span>验证码错误</div>
+                    </div>
+                </div>
+                <div class="accound_handle clearfix">
+                	<a class="fl box_radius" href="javascript:void(0);">登录</a>
+                    <h4 class="fl"><i></i><em>下次自动登录</em></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--用户名登录结束-->
+    <!--二维码登录-->
+    <div class="login_code pa">
+    	<div class="login_code_list pa">
+        	<div class="login_code_list_inner pa">
+            	<h2><img class="block" src="../image/login/QR_code.png"/></h2>
+                <h3 class="font14">关注我们,获取动态.</h3>
+                <p class="color3">让我们的沟通更加亲密无间!</p>
+            </div>
+        </div>
+        <h6 class="pa"><span></span></h6>
+    </div>
+    <!--二维码登录结束-->
+    <div class="login_bottom pa">
+    	<p><img src="../image/login/login_food_infor.png"/></p>
+    </div>
+</div>
+<script src="../script/jquery-1.9.1.min.js"></script>
+<script>
+//监听input值
+$.event.special.valuechange = {
+	teardown: function (namespaces) {
+		$(this).unbind('.valuechange');
+	},
+	handler: function (e) {
+		$.event.special.valuechange.triggerChanged($(this));
+	},
+	add: function (obj) {
+		$(this).on('keyup.valuechange cut.valuechange paste.valuechange input.valuechange', obj.selector, $.event.special.valuechange.handler)
+	},
+	triggerChanged: function (element) {
+		var current = element[0].contentEditable === 'true' ? element.html() : element.val()
+			, previous = typeof element.data('previous') === 'undefined' ? element[0].defaultValue : element.data('previous')
+		if (current !== previous) {
+			element.trigger('valuechange', [element.data('previous')])
+			element.data('previous', current)
+		}
+	}
+};
+//调用
+$(function () {
+	$('.accound_infor>div input').on('valuechange', function (e, previous) {
+		var tval = $(this).val();
+		if(tval != ""){
+			$(this).parent().addClass("remove");
+			$(this).parent().removeClass("current");
+		}else{
+			$(this).parent().removeClass("remove");
+			$(this).parent().addClass("current");
+		}
+	});
+	$('.auth_code>div input').on('valuechange', function (e, previous) {
+		var tval = $(this).val();
+		if(tval != ""){
+			$(this).parent().find("i").removeClass('imp_none');
+		}else{
+			$(this).parent().find("i").addClass('imp_none');
+		}
+	});
+ })
+$(function(){
+	$(document).ready(function() {
+		$(".login").height( $(window).height());
+		$(window).resize(function(){
+			$(".login").height( $(window).height());
+		});
+	});
+	//勾选自动登录
+	$(".accound_handle>h4").click(function(){
+		if($(this).hasClass("current")){
+			$(this).removeClass("current");
+		}else{
+			$(this).addClass("current");
+		}
+	});
+	//input获取焦点
+	$(".accound_infor>div input").focus(function(){
+		var tval = $(this).val();
+		if(tval != ""){
+			$(this).parent().addClass("remove");
+			$(this).parent().removeClass("current");
+		}else{
+			$(this).parent().removeClass("remove");
+			$(this).parent().addClass("current");
+		}
+	});
+	//input失去焦点
+	$(".accound_infor>div input").blur(function(){
+		$(this).parent().removeClass("current");
+	});
+	//验证码获取焦点
+	$(".auth_code>div input").focus(function(){
+		$(this).parent().addClass("current");
+	});
+	//验证码失去焦点
+	$(".auth_code>div input").focus(function(){
+		$(this).parent().addClass("current");
+	});
+	//点击清空input值
+	$(".accound_infor>div i").click(function(){
+		$(this).parents('div').find('input').val('');
+		$(this).parents('div').removeClass("remove");
+	});
+	$(".accound_infor>div.auth_code i").click(function(){
+		$(this).addClass("imp_none");
+	})
+	//点击切换
+	$(".")
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<style>
+	.member_addr .lh2{line-height: 2rem;}
+	.member_addr .name{margin-right: 2rem;}
+	.member_addr .addr{padding-bottom: 0.5rem;}
+	.member_addr .btn{padding:0.1rem 0.5rem}
+	.member_addr .set_default i{width: 0.85rem;height: 0.85rem;background-position: -8.6rem 0;margin-right: 0.5rem;margin-bottom: -0.11rem}
+	.addr_default{background: #f5f9fe}
+	.addr_default .set_default i{background-position:-10.4rem 0;}
+</style>
+<ng-header2></ng-header2>
+<div class="wrap">
+	<div class="member_receiver padding_lr10 mt5">
+		<!--收货地址-->
+		<div class="member_addr addr_default bg_white box_adorn padding_lr10 font70">
+			<p class="lh2">
+				<em class="name in_b font75">杨小玲</em><span>185****3421</span>
+			</p>
+			<p class="border_b addr">上海市浦东新区陆家嘴软件园峨山路91号2号楼5层（周末不收货）</p>
+			<div class="lh2">
+				<p class="in_b color9 set_default"><a href="javascript:void(0);" class="" ng-click="set_default()"><i></i></a>设为默认</p>
+				<p class="fr">
+					<a href="javascript:void(0);" ng-click="deleat()" class="btn box_radius border_all color9">删除</a>
+					<a href="javascript:void(0);" ng-click="edit()" class="btn box_radius border_all color9" >编辑</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="member_receiver padding_lr10 mt5">
+		<!--收货地址-->
+		<div class="member_addr bg_white box_adorn padding_lr10 font70">
+			<p class="lh2">
+				<em class="name in_b font75">杨小玲</em><span>185****3421</span>
+			</p>
+			<p class="border_b addr">上海市浦东新区陆家嘴软件园峨山路91号2号楼5层（周末不收货）</p>
+			<div class="lh2">
+				<p class="in_b color9 set_default"><a href="javascript:void(0);" class=""><i></i></a>设为默认</p>
+				<p class="fr">
+					<a href="javascript:void(0);" ng-click="deleat()" class="btn box_radius border_all color9">删除</a>
+					<a href="javascript:void(0);" ng-click="edit()" class="btn box_radius border_all color9" >编辑</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="btn_init2">
+		<input type="buttom" value="添加地址"/>
+	</div>		
+</div>
