@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="myApp" ng-controller="myCtrl">
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+
+</head>
+<body>
+<div>
+	<ul>
+    	<li ng-repeat="(k,ch) in checkbox_options" >
+        [<span ng-show="choosed[k]">*</span>]
+        <span ng-click="choose_checkbox(k)">{{ch}}</span>
+        </li>
+    </ul>
+</div>
+<script src="js/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.checkbox_options = {
+			'a':'张三',
+			'b':'李四',
+			'c':'王五'
+		};
+		
+		$scope.choosed = {};
+		$scope.choose_checkbox = function(o){
+			if($scope.choosed[o] == undefined){
+				$scope.choosed[o] = true;	
+			}else{
+				$scope.choosed[o] = !$scope.choosed[o];
+			}
+		}
+	})
+</script>
+</body>
+</html>

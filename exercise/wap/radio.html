@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<script src="js/angular.min.js"></script>
+<style>
+.red{ color:red;}
+</style>
+</head>
+
+<body ng-app="myApp" >
+<div ng-controller="myCtrl">
+	<input type="radio" name="sex"  value="male"  ng-model="person.sex">男
+    <input type="radio" name="sex" value="famale" ng-model="person.sex">女
+    <button ng-click="save()">保存</button>
+</div>
+
+<div  ng-controller="myCtrlRadiobg">
+	<ul>
+        <li ng-class="{'red': i == 1}"><span ng-click="choose_radiobg(1)">男</span></li>
+        <li ng-class="{'red': i == 2}"><span ng-click="choose_radiobg(2)">女</span></li>
+	</ul>
+</div>
+
+<div ng-controller="myCtrlRadio">
+	<p ng-repeat="x in sex">
+     <label><input type="checkbox" ng-model="item.checked" ng-change="onChange(item)">{{x}}</label>
+     <p>
+   
+</div>
+
+
+
+
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope){
+		$scope.person = {
+		sex:""
+		};
+		
+		$scope.save = function(){
+			console.log($scope.person.sex);	
+		};	
+		
+	});
+	
+	app.controller('myCtrlRadiobg', function($scope){
+		$scope.choose_radiobg = function(index){
+			$scope.i = index;
+		};	
+	});
+	
+	app.controller('myCtrlRadio', function($scope){
+		$scope.selected = '';
+		$scope.sex = ['男', '女', '保密'];
+		
+		$scope.onChange = function(item){
+			if (item.checked) {
+				if (!$scope.selected) $scope.selected = item;
+				if ($scope.selected !== item) item.checked = false;
+        	} else {
+            	$scope.selected = '';
+        	}	
+		
+		};
+	
+	});
+	
+	
+	
+</script>
+</body>
+</html>
